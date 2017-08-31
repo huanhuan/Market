@@ -139,6 +139,13 @@
 		BFDE69F51F19F2600006B4E1 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDE69F41F19F2600006B4E1 /* libz.tbd */; };
 		BFDE69F71F19F26E0006B4E1 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDE69F61F19F26E0006B4E1 /* libc++.tbd */; };
 		BFDE69F91F19F27B0006B4E1 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDE69F81F19F27B0006B4E1 /* CoreTelephony.framework */; };
+		F34DBF7F1F57AF9B0091C424 /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = F34DBF721F57AF9B0091C424 /* TAAbstractDotView.m */; };
+		F34DBF801F57AF9B0091C424 /* TAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = F34DBF741F57AF9B0091C424 /* TAAnimatedDotView.m */; };
+		F34DBF811F57AF9B0091C424 /* TADotView.m in Sources */ = {isa = PBXBuildFile; fileRef = F34DBF761F57AF9B0091C424 /* TADotView.m */; };
+		F34DBF821F57AF9B0091C424 /* TAPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = F34DBF781F57AF9B0091C424 /* TAPageControl.m */; };
+		F34DBF831F57AF9B0091C424 /* SDCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F34DBF7A1F57AF9B0091C424 /* SDCollectionViewCell.m */; };
+		F34DBF841F57AF9B0091C424 /* SDCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = F34DBF7C1F57AF9B0091C424 /* SDCycleScrollView.m */; };
+		F34DBF851F57AF9B0091C424 /* UIView+SDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F34DBF7E1F57AF9B0091C424 /* UIView+SDExtension.m */; };
 		F3FDE2B51F403455006590BE /* NSString+Jason.m in Sources */ = {isa = PBXBuildFile; fileRef = F3FDE2B41F403455006590BE /* NSString+Jason.m */; };
 /* End PBXBuildFile section */
 
@@ -404,6 +411,20 @@
 		BFDE69F41F19F2600006B4E1 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		BFDE69F61F19F26E0006B4E1 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		BFDE69F81F19F27B0006B4E1 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		F34DBF711F57AF9B0091C424 /* TAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAbstractDotView.h; sourceTree = "<group>"; };
+		F34DBF721F57AF9B0091C424 /* TAAbstractDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAbstractDotView.m; sourceTree = "<group>"; };
+		F34DBF731F57AF9B0091C424 /* TAAnimatedDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAnimatedDotView.h; sourceTree = "<group>"; };
+		F34DBF741F57AF9B0091C424 /* TAAnimatedDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAnimatedDotView.m; sourceTree = "<group>"; };
+		F34DBF751F57AF9B0091C424 /* TADotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TADotView.h; sourceTree = "<group>"; };
+		F34DBF761F57AF9B0091C424 /* TADotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TADotView.m; sourceTree = "<group>"; };
+		F34DBF771F57AF9B0091C424 /* TAPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAPageControl.h; sourceTree = "<group>"; };
+		F34DBF781F57AF9B0091C424 /* TAPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAPageControl.m; sourceTree = "<group>"; };
+		F34DBF791F57AF9B0091C424 /* SDCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDCollectionViewCell.h; sourceTree = "<group>"; };
+		F34DBF7A1F57AF9B0091C424 /* SDCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDCollectionViewCell.m; sourceTree = "<group>"; };
+		F34DBF7B1F57AF9B0091C424 /* SDCycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDCycleScrollView.h; sourceTree = "<group>"; };
+		F34DBF7C1F57AF9B0091C424 /* SDCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDCycleScrollView.m; sourceTree = "<group>"; };
+		F34DBF7D1F57AF9B0091C424 /* UIView+SDExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SDExtension.h"; sourceTree = "<group>"; };
+		F34DBF7E1F57AF9B0091C424 /* UIView+SDExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDExtension.m"; sourceTree = "<group>"; };
 		F3FDE2B31F403455006590BE /* NSString+Jason.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Jason.h"; sourceTree = "<group>"; };
 		F3FDE2B41F403455006590BE /* NSString+Jason.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Jason.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -871,6 +892,7 @@
 		BF6F88FC1F124AB4006D4187 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				F34DBF6F1F57AF9B0091C424 /* SDCycleScrollView */,
 				BF6F8A021F127B0F006D4187 /* WeChatSDK1.7.8 */,
 				BF6F88FD1F124AB4006D4187 /* AFNetworking */,
 				BF6F890B1F124AB4006D4187 /* FMDB */,
@@ -1197,6 +1219,35 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F34DBF6F1F57AF9B0091C424 /* SDCycleScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				F34DBF701F57AF9B0091C424 /* PageControl */,
+				F34DBF791F57AF9B0091C424 /* SDCollectionViewCell.h */,
+				F34DBF7A1F57AF9B0091C424 /* SDCollectionViewCell.m */,
+				F34DBF7B1F57AF9B0091C424 /* SDCycleScrollView.h */,
+				F34DBF7C1F57AF9B0091C424 /* SDCycleScrollView.m */,
+				F34DBF7D1F57AF9B0091C424 /* UIView+SDExtension.h */,
+				F34DBF7E1F57AF9B0091C424 /* UIView+SDExtension.m */,
+			);
+			path = SDCycleScrollView;
+			sourceTree = "<group>";
+		};
+		F34DBF701F57AF9B0091C424 /* PageControl */ = {
+			isa = PBXGroup;
+			children = (
+				F34DBF711F57AF9B0091C424 /* TAAbstractDotView.h */,
+				F34DBF721F57AF9B0091C424 /* TAAbstractDotView.m */,
+				F34DBF731F57AF9B0091C424 /* TAAnimatedDotView.h */,
+				F34DBF741F57AF9B0091C424 /* TAAnimatedDotView.m */,
+				F34DBF751F57AF9B0091C424 /* TADotView.h */,
+				F34DBF761F57AF9B0091C424 /* TADotView.m */,
+				F34DBF771F57AF9B0091C424 /* TAPageControl.h */,
+				F34DBF781F57AF9B0091C424 /* TAPageControl.m */,
+			);
+			path = PageControl;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1294,11 +1345,13 @@
 				BF6F89E41F124AB5006D4187 /* SDImageCache.m in Sources */,
 				BF6F89DC1F124AB5006D4187 /* MJRefreshHeader.m in Sources */,
 				BF6F89C21F124AB5006D4187 /* AFURLRequestSerialization.m in Sources */,
+				F34DBF831F57AF9B0091C424 /* SDCollectionViewCell.m in Sources */,
 				BF6F89C41F124AB5006D4187 /* AFURLSessionManager.m in Sources */,
 				BF6F89B31F124AB5006D4187 /* CPNUserInfoView.m in Sources */,
 				BF6F89931F124AB5006D4187 /* CPNCouponListItemTableViewCell.m in Sources */,
 				BF6F89CA1F124AB5006D4187 /* FMResultSet.m in Sources */,
 				BF6F89AA1F124AB5006D4187 /* CPNPointsMarketGoodsItemTableViewCell.m in Sources */,
+				F34DBF821F57AF9B0091C424 /* TAPageControl.m in Sources */,
 				BF6F89EE1F124AB5006D4187 /* UIImage+WebP.m in Sources */,
 				BF6F898F1F124AB5006D4187 /* CPNCommonLabel.m in Sources */,
 				BF6F89E61F124AB5006D4187 /* SDWebImageDecoder.m in Sources */,
@@ -1306,6 +1359,7 @@
 				BF6F89971F124AB5006D4187 /* CPNGetCouponItemTableViewCell.m in Sources */,
 				BF6F89DA1F124AB5006D4187 /* MJRefreshGifFooter.m in Sources */,
 				BF6F89D81F124AB5006D4187 /* MJRefreshConst.m in Sources */,
+				F34DBF801F57AF9B0091C424 /* TAAnimatedDotView.m in Sources */,
 				BF6F89B51F124AB5006D4187 /* CPNError.m in Sources */,
 				BF6F89EB1F124AB5006D4187 /* UIButton+WebCache.m in Sources */,
 				BF6F89C61F124AB5006D4187 /* FMDatabase.m in Sources */,
@@ -1319,12 +1373,15 @@
 				BF6F89BF1F124AB5006D4187 /* AFHTTPSessionManager.m in Sources */,
 				BF6F89F61F124AB5006D4187 /* SVRadialGradientLayer.m in Sources */,
 				BF6F89941F124AB5006D4187 /* CPNGetCouponListViewController.m in Sources */,
+				F34DBF841F57AF9B0091C424 /* SDCycleScrollView.m in Sources */,
 				BF6F89ED1F124AB5006D4187 /* UIImage+MultiFormat.m in Sources */,
+				F34DBF7F1F57AF9B0091C424 /* TAAbstractDotView.m in Sources */,
 				BF6F89B81F124AB5006D4187 /* CPNRequest.m in Sources */,
 				BF6F89E01F124AB5006D4187 /* UIScrollView+MJRefresh.m in Sources */,
 				BF6F89F21F124AB5006D4187 /* SlideSwitchView.m in Sources */,
 				BF6F8A131F1282FB006D4187 /* CPNTextField.m in Sources */,
 				BF6F89B21F124AB5006D4187 /* CPNUserCenterItemTableViewCell.m in Sources */,
+				F34DBF851F57AF9B0091C424 /* UIView+SDExtension.m in Sources */,
 				BF6F89891F124AB5006D4187 /* CPNBaseViewController.m in Sources */,
 				BF9D89A71F2C8EF4005BEAF8 /* CPNDataBase.m in Sources */,
 				BF9041441F17A0A200728ADC /* CPNExchangeProductAlertView.m in Sources */,
@@ -1380,6 +1437,7 @@
 				BF6F89D21F124AB5006D4187 /* NSObject+MJCoding.m in Sources */,
 				BF6F89AD1F124AB5006D4187 /* CPNProductDetailInfoView.m in Sources */,
 				BF6F89D91F124AB5006D4187 /* MJRefreshFooter.m in Sources */,
+				F34DBF811F57AF9B0091C424 /* TADotView.m in Sources */,
 				BF95D83A1F13BE8B00679AD3 /* CPNUserLoginViewController.m in Sources */,
 				BF6F89E71F124AB5006D4187 /* SDWebImageDownloader.m in Sources */,
 				BF6F8A181F12840E006D4187 /* CPNPopBackView.m in Sources */,
