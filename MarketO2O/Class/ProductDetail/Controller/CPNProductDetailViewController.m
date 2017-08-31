@@ -12,6 +12,7 @@
 #import "UIImageView+WebCache.h"
 #import "CPNProductStarView.h"
 #import "CPNProductDescriptionView.h"
+#import "SDCycleScrollView.h"
 
 @interface CPNProductDetailViewController ()
 
@@ -22,7 +23,7 @@
 /**
  商品图片显示
  */
-@property (nonatomic, strong) UIImageView                   *productImageView;
+@property (nonatomic, strong) SDCycleScrollView                   *productImageViews;
 /**
  商品信息显示
  */
@@ -98,14 +99,16 @@
 
  @return imageView
  */
-- (UIImageView *)productImageView{
-    if (!_productImageView) {
-        _productImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.scrollView.width, self.scrollView.width)];
-        _productImageView.backgroundColor = CPNCommonOrangeColor;
-        [_productImageView sd_setImageWithURL:[NSURL URLWithString:self.productModel.imageUrl] placeholderImage:[UIImage imageNamed:@"图片默认图"]];
-        [self.scrollView addSubview:_productImageView];
+- (SDCycleScrollView *)productImageView{
+    if (!_productImageViews) {
+//        productImageViews = [[SDCycleScrollView alloc] initWithFrame:CGRectMake(0, 0, self.scrollView.width, self.scrollView.width)];
+        _productImageViews = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0 , self.scrollView.width, self.scrollView.width) delegate:nil placeholderImage:[UIImage imageNamed:@"图片默认图"]];
+        [_productImageViews setImageURLStringsGroup:@[[NSURL URLWithString:self.productModel.imageUrl]]];
+//        _productImageView.backgroundColor = CPNCommonOrangeColor;
+//        [_productImageView sd_setImageWithURL:[NSURL URLWithString:self.productModel.imageUrl] placeholderImage:[UIImage imageNamed:@"图片默认图"]];
+        [self.scrollView addSubview:_productImageViews];
     }
-    return _productImageView;
+    return _productImageViews;
 }
 
 
