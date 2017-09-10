@@ -183,7 +183,7 @@
         [[rightBarButton titleLabel] setFont:[UIFont systemFontOfSize:15.0f]];
         [rightBarButton setTitle:title forState:UIControlStateNormal];
         [[rightBarButton titleLabel] setTextAlignment:NSTextAlignmentRight];
-        [rightBarButton setTitleColor:CPNCommonWhiteColor forState:UIControlStateHighlighted];
+        [rightBarButton setTitleColor:CPNCommonBlackColor forState:UIControlStateNormal];
         [rightBarButton setTitleEdgeInsets:UIEdgeInsetsMake(0, 12, 0, -12)];
         
         if (!normalImageNamed && !highImageNamed) {
@@ -274,6 +274,7 @@
     }
     return [self findSuperViewWithKindClass:class subView:supView];
 }
+
 
 
 

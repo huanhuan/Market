@@ -16,6 +16,8 @@
 #import "CPNAlertView.h"
 #import "CPNTabBarViewController.h"
 
+#import "CPNMapNavManager.h"
+#import "CPNSignatureNameViewController.h"
 
 static NSString *cellIdentifier = @"cellIdentifier";
 static NSString *headerIdentifier = @"headerIdentifer";
@@ -211,6 +213,12 @@ static NSString *headerIdentifier = @"headerIdentifer";
         CPNProductDetailViewController *productDetail = [[CPNProductDetailViewController alloc] initWithProductModel:itemModel];
         productDetail.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:productDetail animated:YES];
+        //39.918058 longitude:116.397026] name:@"故宫"
+//        CPNSignatureNameViewController *vc = [CPNSignatureNameViewController new];
+//        vc.hidesBottomBarWhenPushed = YES;
+//        [self.navigationController pushViewController:vc animated:YES];
+    
+//        [[CPNMapNavManager sharedCPNMapNavManager] mapNavTargetPointWithLatitude:39.918058 longitude:116.397026 name:@"故宫"];
     }
 }
 

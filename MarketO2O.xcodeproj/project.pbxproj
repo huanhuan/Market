@@ -146,11 +146,18 @@
 		F34DBF831F57AF9B0091C424 /* SDCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F34DBF7A1F57AF9B0091C424 /* SDCollectionViewCell.m */; };
 		F34DBF841F57AF9B0091C424 /* SDCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = F34DBF7C1F57AF9B0091C424 /* SDCycleScrollView.m */; };
 		F34DBF851F57AF9B0091C424 /* UIView+SDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F34DBF7E1F57AF9B0091C424 /* UIView+SDExtension.m */; };
-		F392B9E51F5BE52F00D2B64A /* AMapFoundationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F392B9E11F5BE52F00D2B64A /* AMapFoundationKit.framework */; };
-		F392B9E61F5BE52F00D2B64A /* AMapNaviKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F392B9E21F5BE52F00D2B64A /* AMapNaviKit.framework */; };
-		F392B9E71F5BE52F00D2B64A /* AMapSearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F392B9E31F5BE52F00D2B64A /* AMapSearchKit.framework */; };
-		F392B9E81F5BE52F00D2B64A /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F392B9E41F5BE52F00D2B64A /* MAMapKit.framework */; };
 		F392B9EC1F5BE65E00D2B64A /* CPNMapNavManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F392B9EB1F5BE65E00D2B64A /* CPNMapNavManager.m */; };
+		F392B9FB1F5BEF7500D2B64A /* CPNSignatureNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F392B9FA1F5BEF7500D2B64A /* CPNSignatureNameViewController.m */; };
+		F392BA061F5BF2EB00D2B64A /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F392BA051F5BF2EB00D2B64A /* JavaScriptCore.framework */; };
+		F392BA081F5BF34700D2B64A /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F392BA071F5BF34700D2B64A /* libstdc++.6.0.9.tbd */; };
+		F392BA0A1F5BF40C00D2B64A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F392BA091F5BF40C00D2B64A /* AVFoundation.framework */; };
+		F392BA7E1F5C01D000D2B64A /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F392BA7B1F5C01D000D2B64A /* MAMapKit.framework */; };
+		F392BA7F1F5C01D000D2B64A /* AMapNaviKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F392BA7C1F5C01D000D2B64A /* AMapNaviKit.framework */; };
+		F392BA801F5C01D000D2B64A /* AMapFoundationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F392BA7D1F5C01D000D2B64A /* AMapFoundationKit.framework */; };
+		F392BA831F5C02CB00D2B64A /* AMap.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F392BA811F5C02CB00D2B64A /* AMap.bundle */; };
+		F392BA841F5C02CB00D2B64A /* AMapNavi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F392BA821F5C02CB00D2B64A /* AMapNavi.bundle */; };
+		F392BA861F5C0DBC00D2B64A /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F392BA851F5C0DBC00D2B64A /* GLKit.framework */; };
+		F392BA891F5D289400D2B64A /* PPSSignatureView.m in Sources */ = {isa = PBXBuildFile; fileRef = F392BA871F5D289400D2B64A /* PPSSignatureView.m */; };
 		F3FDE2B51F403455006590BE /* NSString+Jason.m in Sources */ = {isa = PBXBuildFile; fileRef = F3FDE2B41F403455006590BE /* NSString+Jason.m */; };
 /* End PBXBuildFile section */
 
@@ -430,12 +437,29 @@
 		F34DBF7C1F57AF9B0091C424 /* SDCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDCycleScrollView.m; sourceTree = "<group>"; };
 		F34DBF7D1F57AF9B0091C424 /* UIView+SDExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SDExtension.h"; sourceTree = "<group>"; };
 		F34DBF7E1F57AF9B0091C424 /* UIView+SDExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDExtension.m"; sourceTree = "<group>"; };
-		F392B9E11F5BE52F00D2B64A /* AMapFoundationKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapFoundationKit.framework; sourceTree = "<group>"; };
-		F392B9E21F5BE52F00D2B64A /* AMapNaviKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapNaviKit.framework; sourceTree = "<group>"; };
-		F392B9E31F5BE52F00D2B64A /* AMapSearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapSearchKit.framework; sourceTree = "<group>"; };
-		F392B9E41F5BE52F00D2B64A /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
 		F392B9EA1F5BE65E00D2B64A /* CPNMapNavManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPNMapNavManager.h; sourceTree = "<group>"; };
 		F392B9EB1F5BE65E00D2B64A /* CPNMapNavManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPNMapNavManager.m; sourceTree = "<group>"; };
+		F392B9F91F5BEF7500D2B64A /* CPNSignatureNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPNSignatureNameViewController.h; sourceTree = "<group>"; };
+		F392B9FA1F5BEF7500D2B64A /* CPNSignatureNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPNSignatureNameViewController.m; sourceTree = "<group>"; };
+		F392BA051F5BF2EB00D2B64A /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		F392BA071F5BF34700D2B64A /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		F392BA091F5BF40C00D2B64A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		F392BA0B1F5BF67700D2B64A /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MAMapKit.framework; path = MarketO2O/Vendor/AMap/MAMapKit.framework; sourceTree = "<group>"; };
+		F392BA0C1F5BF67700D2B64A /* AMapSearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AMapSearchKit.framework; path = MarketO2O/Vendor/AMap/AMapSearchKit.framework; sourceTree = "<group>"; };
+		F392BA0D1F5BF67700D2B64A /* AMapNaviKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AMapNaviKit.framework; path = MarketO2O/Vendor/AMap/AMapNaviKit.framework; sourceTree = "<group>"; };
+		F392BA0E1F5BF67700D2B64A /* AMapFoundationKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AMapFoundationKit.framework; path = MarketO2O/Vendor/AMap/AMapFoundationKit.framework; sourceTree = "<group>"; };
+		F392BA131F5BF69000D2B64A /* AMap.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AMap.bundle; path = MarketO2O/Vendor/AMap/MAMapKit.framework/AMap.bundle; sourceTree = "<group>"; };
+		F392BA151F5BF6A700D2B64A /* AMapNavi.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AMapNavi.bundle; path = MarketO2O/Vendor/AMap/AMapNaviKit.framework/AMapNavi.bundle; sourceTree = "<group>"; };
+		F392BA1D1F5BF8E100D2B64A /* AMap.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AMap.bundle; path = MarketO2O/Vendor/AMap/MAMapKit.framework/AMap.bundle; sourceTree = "<group>"; };
+		F392BA1E1F5BF8E100D2B64A /* AMapNavi.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AMapNavi.bundle; path = MarketO2O/Vendor/AMap/AMapNaviKit.framework/AMapNavi.bundle; sourceTree = "<group>"; };
+		F392BA7B1F5C01D000D2B64A /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
+		F392BA7C1F5C01D000D2B64A /* AMapNaviKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapNaviKit.framework; sourceTree = "<group>"; };
+		F392BA7D1F5C01D000D2B64A /* AMapFoundationKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapFoundationKit.framework; sourceTree = "<group>"; };
+		F392BA811F5C02CB00D2B64A /* AMap.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AMap.bundle; path = MarketO2O/Vendor/AMap/MAMapKit.framework/AMap.bundle; sourceTree = "<group>"; };
+		F392BA821F5C02CB00D2B64A /* AMapNavi.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AMapNavi.bundle; path = MarketO2O/Vendor/AMap/AMapNaviKit.framework/AMapNavi.bundle; sourceTree = "<group>"; };
+		F392BA851F5C0DBC00D2B64A /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		F392BA871F5D289400D2B64A /* PPSSignatureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPSSignatureView.m; sourceTree = "<group>"; };
+		F392BA881F5D289400D2B64A /* PPSSignatureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPSSignatureView.h; sourceTree = "<group>"; };
 		F3FDE2B31F403455006590BE /* NSString+Jason.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Jason.h"; sourceTree = "<group>"; };
 		F3FDE2B41F403455006590BE /* NSString+Jason.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Jason.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -445,22 +469,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F392B9E71F5BE52F00D2B64A /* AMapSearchKit.framework in Frameworks */,
-				BFDE69F91F19F27B0006B4E1 /* CoreTelephony.framework in Frameworks */,
+				F392BA861F5C0DBC00D2B64A /* GLKit.framework in Frameworks */,
+				F392BA0A1F5BF40C00D2B64A /* AVFoundation.framework in Frameworks */,
+				BFAD829E1F014C3F000F1173 /* SystemConfiguration.framework in Frameworks */,
+				BFAD829C1F014BFE000F1173 /* Security.framework in Frameworks */,
+				F392BA801F5C01D000D2B64A /* AMapFoundationKit.framework in Frameworks */,
+				F392BA081F5BF34700D2B64A /* libstdc++.6.0.9.tbd in Frameworks */,
 				BFDE69F71F19F26E0006B4E1 /* libc++.tbd in Frameworks */,
 				BFDE69F51F19F2600006B4E1 /* libz.tbd in Frameworks */,
+				F392BA061F5BF2EB00D2B64A /* JavaScriptCore.framework in Frameworks */,
+				BFDE69F91F19F27B0006B4E1 /* CoreTelephony.framework in Frameworks */,
+				F392BA7F1F5C01D000D2B64A /* AMapNaviKit.framework in Frameworks */,
 				BFAD82AA1F014D3F000F1173 /* libsqlite3.0.tbd in Frameworks */,
 				BFAD82A81F014CF7000F1173 /* libz.1.2.5.tbd in Frameworks */,
-				F392B9E61F5BE52F00D2B64A /* AMapNaviKit.framework in Frameworks */,
 				BFAD82A61F014CE4000F1173 /* CoreGraphics.framework in Frameworks */,
 				BFAD82A41F014CDC000F1173 /* Foundation.framework in Frameworks */,
+				F392BA7E1F5C01D000D2B64A /* MAMapKit.framework in Frameworks */,
 				BF6F8A081F127B0F006D4187 /* libWeChatSDK.a in Frameworks */,
 				BFAD82A21F014CD1000F1173 /* UIKit.framework in Frameworks */,
 				BFAD82A01F014C48000F1173 /* MobileCoreServices.framework in Frameworks */,
-				F392B9E81F5BE52F00D2B64A /* MAMapKit.framework in Frameworks */,
-				BFAD829E1F014C3F000F1173 /* SystemConfiguration.framework in Frameworks */,
-				F392B9E51F5BE52F00D2B64A /* AMapFoundationKit.framework in Frameworks */,
-				BFAD829C1F014BFE000F1173 /* Security.framework in Frameworks */,
 				BFAD829A1F014BCB000F1173 /* CFNetwork.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -507,6 +534,7 @@
 		BF6F886E1F124AB4006D4187 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				F392B9F81F5BEF3700D2B64A /* SignatureName */,
 				F392B9E91F5BE61600D2B64A /* MapNav */,
 				BF6F886F1F124AB4006D4187 /* Base */,
 				BF6F88831F124AB4006D4187 /* CouponList */,
@@ -908,6 +936,7 @@
 		BF6F88FC1F124AB4006D4187 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				F392B9ED1F5BEEE700D2B64A /* signatureView */,
 				F392B9E01F5BE52F00D2B64A /* AMap */,
 				F34DBF6F1F57AF9B0091C424 /* SDCycleScrollView */,
 				BF6F8A021F127B0F006D4187 /* WeChatSDK1.7.8 */,
@@ -1203,6 +1232,12 @@
 		BFAD819F1F014945000F1173 = {
 			isa = PBXGroup;
 			children = (
+				F392BA811F5C02CB00D2B64A /* AMap.bundle */,
+				F392BA821F5C02CB00D2B64A /* AMapNavi.bundle */,
+				F392BA1D1F5BF8E100D2B64A /* AMap.bundle */,
+				F392BA1E1F5BF8E100D2B64A /* AMapNavi.bundle */,
+				F392BA151F5BF6A700D2B64A /* AMapNavi.bundle */,
+				F392BA131F5BF69000D2B64A /* AMap.bundle */,
 				BF6F88601F124AB4006D4187 /* MarketO2O */,
 				BFAD81A91F014945000F1173 /* Products */,
 				BFAD82981F014BCA000F1173 /* Frameworks */,
@@ -1220,6 +1255,14 @@
 		BFAD82981F014BCA000F1173 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F392BA851F5C0DBC00D2B64A /* GLKit.framework */,
+				F392BA0B1F5BF67700D2B64A /* MAMapKit.framework */,
+				F392BA0C1F5BF67700D2B64A /* AMapSearchKit.framework */,
+				F392BA0D1F5BF67700D2B64A /* AMapNaviKit.framework */,
+				F392BA0E1F5BF67700D2B64A /* AMapFoundationKit.framework */,
+				F392BA091F5BF40C00D2B64A /* AVFoundation.framework */,
+				F392BA071F5BF34700D2B64A /* libstdc++.6.0.9.tbd */,
+				F392BA051F5BF2EB00D2B64A /* JavaScriptCore.framework */,
 				BFDE69F81F19F27B0006B4E1 /* CoreTelephony.framework */,
 				BFDE69F61F19F26E0006B4E1 /* libc++.tbd */,
 				BFDE69F41F19F2600006B4E1 /* libz.tbd */,
@@ -1268,10 +1311,9 @@
 		F392B9E01F5BE52F00D2B64A /* AMap */ = {
 			isa = PBXGroup;
 			children = (
-				F392B9E11F5BE52F00D2B64A /* AMapFoundationKit.framework */,
-				F392B9E21F5BE52F00D2B64A /* AMapNaviKit.framework */,
-				F392B9E31F5BE52F00D2B64A /* AMapSearchKit.framework */,
-				F392B9E41F5BE52F00D2B64A /* MAMapKit.framework */,
+				F392BA7B1F5C01D000D2B64A /* MAMapKit.framework */,
+				F392BA7C1F5C01D000D2B64A /* AMapNaviKit.framework */,
+				F392BA7D1F5C01D000D2B64A /* AMapFoundationKit.framework */,
 			);
 			path = AMap;
 			sourceTree = "<group>";
@@ -1283,6 +1325,24 @@
 				F392B9EB1F5BE65E00D2B64A /* CPNMapNavManager.m */,
 			);
 			path = MapNav;
+			sourceTree = "<group>";
+		};
+		F392B9ED1F5BEEE700D2B64A /* signatureView */ = {
+			isa = PBXGroup;
+			children = (
+				F392BA871F5D289400D2B64A /* PPSSignatureView.m */,
+				F392BA881F5D289400D2B64A /* PPSSignatureView.h */,
+			);
+			path = signatureView;
+			sourceTree = "<group>";
+		};
+		F392B9F81F5BEF3700D2B64A /* SignatureName */ = {
+			isa = PBXGroup;
+			children = (
+				F392B9F91F5BEF7500D2B64A /* CPNSignatureNameViewController.h */,
+				F392B9FA1F5BEF7500D2B64A /* CPNSignatureNameViewController.m */,
+			);
+			path = SignatureName;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1344,6 +1404,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F392BA831F5C02CB00D2B64A /* AMap.bundle in Resources */,
+				F392BA841F5C02CB00D2B64A /* AMapNavi.bundle in Resources */,
 				BF6F8A091F127B0F006D4187 /* README.txt in Resources */,
 				BF6F89F41F124AB5006D4187 /* SVProgressHUD.bundle in Resources */,
 				BF6F89B11F124AB5006D4187 /* CPNUserCenterItem.plist in Resources */,
@@ -1465,6 +1527,7 @@
 				BF6F89C31F124AB5006D4187 /* AFURLResponseSerialization.m in Sources */,
 				BF6F89E11F124AB5006D4187 /* UIView+MJExtension.m in Sources */,
 				BF6F89DD1F124AB5006D4187 /* MJRefreshLegendFooter.m in Sources */,
+				F392BA891F5D289400D2B64A /* PPSSignatureView.m in Sources */,
 				BF6F89EA1F124AB5006D4187 /* SDWebImagePrefetcher.m in Sources */,
 				BF6F89851F124AB5006D4187 /* NSString+ValidPointCount.m in Sources */,
 				BF6F89A51F124AB5006D4187 /* CPNPointsMarketPageViewController.m in Sources */,
@@ -1473,6 +1536,7 @@
 				BF6F89E51F124AB5006D4187 /* SDWebImageCompat.m in Sources */,
 				BF6F89921F124AB5006D4187 /* CPNCouponListCouponItemModel.m in Sources */,
 				BF6F89D21F124AB5006D4187 /* NSObject+MJCoding.m in Sources */,
+				F392B9FB1F5BEF7500D2B64A /* CPNSignatureNameViewController.m in Sources */,
 				BF6F89AD1F124AB5006D4187 /* CPNProductDetailInfoView.m in Sources */,
 				BF6F89D91F124AB5006D4187 /* MJRefreshFooter.m in Sources */,
 				F34DBF811F57AF9B0091C424 /* TADotView.m in Sources */,
@@ -1597,10 +1661,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/MarketO2O/Vendor/WeChatSDK1.7.8",
 				);
-				OTHER_LDFLAGS = (
-					"-Objc",
-					"-all_load",
-				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dosth.coupon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1625,10 +1686,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/MarketO2O/Vendor/WeChatSDK1.7.8",
 				);
-				OTHER_LDFLAGS = (
-					"-Objc",
-					"-all_load",
-				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dosth.coupon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

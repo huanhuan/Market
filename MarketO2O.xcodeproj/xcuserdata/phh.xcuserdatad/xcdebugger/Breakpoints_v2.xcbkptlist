@@ -154,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarketO2O/Delegate/AppDelegate.m"
-            timestampString = "524888142.714509"
+            timestampString = "526193980.423031"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
             landmarkName = "-loginUserModel"
             landmarkType = "7">
          </BreakpointContent>
@@ -234,11 +234,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarketO2O/Delegate/AppDelegate.m"
-            timestampString = "524889382.318292"
+            timestampString = "526193980.423031"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
             landmarkName = "-loginUserModel"
             landmarkType = "7">
             <Locations>
@@ -250,11 +250,11 @@
                   moduleName = "MarketO2O"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/phh/Market/MarketO2O/MarketO2O/Delegate/AppDelegate.m"
-                  timestampString = "524903363.386784"
+                  timestampString = "526194690.754364"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "153"
-                  endingLineNumber = "153"
+                  startingLineNumber = "171"
+                  endingLineNumber = "171"
                   offsetFromSymbolStart = "216">
                </Location>
                <Location
@@ -265,11 +265,11 @@
                   moduleName = "MarketO2O"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/phh/Market/MarketO2O/MarketO2O/Delegate/AppDelegate.m"
-                  timestampString = "524903363.38831"
+                  timestampString = "526194690.755877"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "154"
-                  endingLineNumber = "154"
+                  startingLineNumber = "172"
+                  endingLineNumber = "172"
                   offsetFromSymbolStart = "80">
                </Location>
             </Locations>
@@ -368,6 +368,22 @@
             startingLineNumber = "128"
             endingLineNumber = "128"
             landmarkName = "-requestHomePageHotProductWithPage:isNeedLoading:completeBlock:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MarketO2O/Class/SignatureName/CPNSignatureNameViewController.m"
+            timestampString = "526195659.07687"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "-button"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
