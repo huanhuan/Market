@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23733DE61F6B672200B8B183 /* CPNAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23733DE51F6B672200B8B183 /* CPNAboutViewController.m */; };
 		BF6F89831F124AB5006D4187 /* NSDate+CPNDate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6F88631F124AB4006D4187 /* NSDate+CPNDate.m */; };
 		BF6F89841F124AB5006D4187 /* NSString+Md5.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6F88651F124AB4006D4187 /* NSString+Md5.m */; };
 		BF6F89851F124AB5006D4187 /* NSString+ValidPointCount.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6F88671F124AB4006D4187 /* NSString+ValidPointCount.m */; };
@@ -162,6 +163,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		23733DE41F6B672200B8B183 /* CPNAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPNAboutViewController.h; sourceTree = "<group>"; };
+		23733DE51F6B672200B8B183 /* CPNAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPNAboutViewController.m; sourceTree = "<group>"; };
 		BF6F88621F124AB4006D4187 /* NSDate+CPNDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+CPNDate.h"; sourceTree = "<group>"; };
 		BF6F88631F124AB4006D4187 /* NSDate+CPNDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+CPNDate.m"; sourceTree = "<group>"; };
 		BF6F88641F124AB4006D4187 /* NSString+Md5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Md5.h"; sourceTree = "<group>"; };
@@ -495,6 +498,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		23733DE31F6B66F600B8B183 /* AboutUs */ = {
+			isa = PBXGroup;
+			children = (
+				23733DE41F6B672200B8B183 /* CPNAboutViewController.h */,
+				23733DE51F6B672200B8B183 /* CPNAboutViewController.m */,
+			);
+			name = AboutUs;
+			sourceTree = "<group>";
+		};
 		BF6F88601F124AB4006D4187 /* MarketO2O */ = {
 			isa = PBXGroup;
 			children = (
@@ -534,6 +546,7 @@
 		BF6F886E1F124AB4006D4187 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				23733DE31F6B66F600B8B183 /* AboutUs */,
 				F392B9F81F5BEF3700D2B64A /* SignatureName */,
 				F392B9E91F5BE61600D2B64A /* MapNav */,
 				BF6F886F1F124AB4006D4187 /* Base */,
@@ -1443,6 +1456,7 @@
 				BF6F89DE1F124AB5006D4187 /* MJRefreshLegendHeader.m in Sources */,
 				BF6F898A1F124AB5006D4187 /* CPNNavigationController.m in Sources */,
 				BF6F89E41F124AB5006D4187 /* SDImageCache.m in Sources */,
+				23733DE61F6B672200B8B183 /* CPNAboutViewController.m in Sources */,
 				BF6F89DC1F124AB5006D4187 /* MJRefreshHeader.m in Sources */,
 				BF6F89C21F124AB5006D4187 /* AFURLRequestSerialization.m in Sources */,
 				F34DBF831F57AF9B0091C424 /* SDCollectionViewCell.m in Sources */,

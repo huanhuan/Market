@@ -12,6 +12,7 @@
 #import "CPNOrderListViewController.h"
 #import "CPNCouponListManagerViewController.h"
 #import "CPNAlertView.h"
+#import "CPNAboutViewController.h"
 
 static NSString *cellIdentifer = @"cellIdentifier";
 
@@ -165,7 +166,13 @@ static NSString *cellIdentifer = @"cellIdentifier";
                     [[UIApplication sharedApplication] openURL:url];
                 }
                     break;
-                    
+                case 1:
+                {
+                    CPNAboutViewController *aboutVC = [[CPNAboutViewController alloc] init];
+                    aboutVC.hidesBottomBarWhenPushed = YES;
+                    [self.navigationController pushViewController:aboutVC animated:YES];
+                }
+                    break;
                 default:
                     break;
             }
