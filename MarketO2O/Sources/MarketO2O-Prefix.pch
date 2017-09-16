@@ -28,5 +28,6 @@
 #import "CPNError.h"
 #import "CPNDataBase.h"
 #import "CPNLoginUserInfoModel.h"
+#import "Masonry.h"
 
 #endif /* MaketO2O_Prefix_pch */
