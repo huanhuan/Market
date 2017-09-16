@@ -174,8 +174,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		23733DE41F6B672200B8B183 /* CPNAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPNAboutViewController.h; sourceTree = "<group>"; };
-		23733DE51F6B672200B8B183 /* CPNAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPNAboutViewController.m; sourceTree = "<group>"; };
+		23733DE41F6B672200B8B183 /* CPNAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPNAboutViewController.h; path = ../CPNAboutViewController.h; sourceTree = "<group>"; };
+		23733DE51F6B672200B8B183 /* CPNAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPNAboutViewController.m; path = ../CPNAboutViewController.m; sourceTree = "<group>"; };
 		23733DE81F6B6F9900B8B183 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		23733DE91F6B6F9900B8B183 /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
 		23733DEA1F6B6F9900B8B183 /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
@@ -535,15 +535,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		23733DE31F6B66F600B8B183 /* AboutUs */ = {
-			isa = PBXGroup;
-			children = (
-				23733DE41F6B672200B8B183 /* CPNAboutViewController.h */,
-				23733DE51F6B672200B8B183 /* CPNAboutViewController.m */,
-			);
-			name = AboutUs;
-			sourceTree = "<group>";
-		};
 		23733DE71F6B6F9900B8B183 /* Masonry */ = {
 			isa = PBXGroup;
 			children = (
@@ -617,7 +608,7 @@
 		BF6F886E1F124AB4006D4187 /* Class */ = {
 			isa = PBXGroup;
 			children = (
-				23733DE31F6B66F600B8B183 /* AboutUs */,
+				F3531F151F6CC140007B158D /* About */,
 				F392B9F81F5BEF3700D2B64A /* SignatureName */,
 				F392B9E91F5BE61600D2B64A /* MapNav */,
 				BF6F886F1F124AB4006D4187 /* Base */,
@@ -1391,6 +1382,15 @@
 				F34DBF781F57AF9B0091C424 /* TAPageControl.m */,
 			);
 			path = PageControl;
+			sourceTree = "<group>";
+		};
+		F3531F151F6CC140007B158D /* About */ = {
+			isa = PBXGroup;
+			children = (
+				23733DE41F6B672200B8B183 /* CPNAboutViewController.h */,
+				23733DE51F6B672200B8B183 /* CPNAboutViewController.m */,
+			);
+			path = About;
 			sourceTree = "<group>";
 		};
 		F392B9E01F5BE52F00D2B64A /* AMap */ = {
