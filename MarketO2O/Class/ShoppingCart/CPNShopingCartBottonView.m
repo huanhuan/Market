@@ -115,9 +115,17 @@
         [_confirmButton.titleLabel setFont:CPNCommonFontTwelveSize];
         [_confirmButton setTitle:@"去结算(0件)" forState:UIControlStateNormal];
         [_confirmButton setTitleColor:CPNCommonWhiteColor forState:UIControlStateNormal];
+        [_confirmButton addTarget:self action:@selector(confirmButtonClick:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_confirmButton];
     }
     return _confirmButton;
+}
+
+- (void)confirmButtonClick:(id)sender
+{
+    if ([self.delegate respondsToSelector:@selector(confirmButtonClick)]) {
+        [self.delegate confirmButtonClick];
+    }
 }
 
 - (void)updateSelectNumber:(NSUInteger)number points:(NSUInteger)points hasSelectedAll:(BOOL)selected

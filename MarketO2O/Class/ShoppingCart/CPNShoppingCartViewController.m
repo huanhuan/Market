@@ -14,6 +14,8 @@
 
 #import "CPNShopingCartBottonView.h"
 
+#import "CPNGoodsPaymentViewController.h"
+
 static NSString *cellIdentifier = @"cellIdentifier";
 
 
@@ -196,5 +198,20 @@ static NSString *cellIdentifier = @"cellIdentifier";
     [self updateView];
 }
 
+- (void)confirmButtonClick
+{
+    AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    if (!delegate.loginUserModel) {
+        [SVProgressHUD showInfoWithStatus:@"需要登录后才能购买"];
+        return;
+    }
+    if (self.selectedProductionArray.count > 0) {
+        CPNGoodsPaymentViewController *VC = [CPNGoodsPaymentViewController new];
+        VC.hidesBottomBarWhenPushed = YES;
+        VC.selectedProductionArray = [self.selectedProductionArray copy];
+        [self.navigationController pushViewController:VC animated:YES];
+    }
+
+}
 
 @end

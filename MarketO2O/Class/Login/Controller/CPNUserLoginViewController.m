@@ -40,8 +40,8 @@ static CGFloat HeightWithTextFieldBackView = 50;
     self.title = @"登录";
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
     self.mobileTextView.hidden =
-    self.passwordTextView.hidden =
-    self.loginButton.hidden = NO;
+    self.passwordTextView.hidden = NO;
+    //self.loginButton.hidden = NO;
 }
 
 - (void)didReceiveMemoryWarning {

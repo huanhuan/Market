@@ -12,6 +12,7 @@
 
 - (void)selectedAll:(BOOL)selected;
 
+- (void)confirmButtonClick;
 @end
 
 @interface CPNShopingCartBottonView : UIView

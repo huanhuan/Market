@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		23733DE61F6B672200B8B183 /* CPNAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23733DE51F6B672200B8B183 /* CPNAboutViewController.m */; };
 		23733E021F6B6F9900B8B183 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 23733DE81F6B6F9900B8B183 /* Info.plist */; };
 		23733E031F6B6F9900B8B183 /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 23733DEA1F6B6F9900B8B183 /* MASCompositeConstraint.m */; };
 		23733E041F6B6F9900B8B183 /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 23733DED1F6B6F9900B8B183 /* MASConstraint.m */; };
@@ -183,12 +182,12 @@
 		F3E8C0DB1F6E75C4006D7C61 /* BEMCheckBoxGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E8C0D61F6E75C4006D7C61 /* BEMCheckBoxGroup.m */; };
 		F3E8C0DC1F6E75C4006D7C61 /* BEMAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E8C0D81F6E75C4006D7C61 /* BEMAnimationManager.m */; };
 		F3E8C0DF1F6E7C9C006D7C61 /* CPNShopingCartBottonView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E8C0DE1F6E7C9C006D7C61 /* CPNShopingCartBottonView.m */; };
+		F3E8C0F81F77ABAD006D7C61 /* CPNAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E8C0F61F77ABAD006D7C61 /* CPNAboutViewController.m */; };
+		F3E8C0FF1F77ABD0006D7C61 /* CPNGoodsPaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E8C0FC1F77ABD0006D7C61 /* CPNGoodsPaymentViewController.m */; };
 		F3FDE2B51F403455006590BE /* NSString+Jason.m in Sources */ = {isa = PBXBuildFile; fileRef = F3FDE2B41F403455006590BE /* NSString+Jason.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		23733DE41F6B672200B8B183 /* CPNAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPNAboutViewController.h; path = ../CPNAboutViewController.h; sourceTree = "<group>"; };
-		23733DE51F6B672200B8B183 /* CPNAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPNAboutViewController.m; path = ../CPNAboutViewController.m; sourceTree = "<group>"; };
 		23733DE81F6B6F9900B8B183 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		23733DE91F6B6F9900B8B183 /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
 		23733DEA1F6B6F9900B8B183 /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
@@ -538,6 +537,10 @@
 		F3E8C0D91F6E75C4006D7C61 /* BEMAnimationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMAnimationManager.h; sourceTree = "<group>"; };
 		F3E8C0DD1F6E7C9C006D7C61 /* CPNShopingCartBottonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPNShopingCartBottonView.h; sourceTree = "<group>"; };
 		F3E8C0DE1F6E7C9C006D7C61 /* CPNShopingCartBottonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPNShopingCartBottonView.m; sourceTree = "<group>"; };
+		F3E8C0F61F77ABAD006D7C61 /* CPNAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPNAboutViewController.m; sourceTree = "<group>"; };
+		F3E8C0F71F77ABAD006D7C61 /* CPNAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPNAboutViewController.h; sourceTree = "<group>"; };
+		F3E8C0FB1F77ABD0006D7C61 /* CPNGoodsPaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPNGoodsPaymentViewController.h; sourceTree = "<group>"; };
+		F3E8C0FC1F77ABD0006D7C61 /* CPNGoodsPaymentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPNGoodsPaymentViewController.m; sourceTree = "<group>"; };
 		F3FDE2B31F403455006590BE /* NSString+Jason.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Jason.h"; sourceTree = "<group>"; };
 		F3FDE2B41F403455006590BE /* NSString+Jason.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Jason.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -646,6 +649,7 @@
 		BF6F886E1F124AB4006D4187 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				F3E8C0F91F77ABD0006D7C61 /* GoodsPayment */,
 				F36EB8411F6E224100DD251A /* ShoppingCart */,
 				F36EB8361F6E1B5000DD251A /* ShopInfo */,
 				F3531F161F6CC1C1007B158D /* GoodsPayment */,
@@ -1430,8 +1434,8 @@
 		F3531F151F6CC140007B158D /* About */ = {
 			isa = PBXGroup;
 			children = (
-				23733DE41F6B672200B8B183 /* CPNAboutViewController.h */,
-				23733DE51F6B672200B8B183 /* CPNAboutViewController.m */,
+				F3E8C0F71F77ABAD006D7C61 /* CPNAboutViewController.h */,
+				F3E8C0F61F77ABAD006D7C61 /* CPNAboutViewController.m */,
 			);
 			path = About;
 			sourceTree = "<group>";
@@ -1581,6 +1585,39 @@
 			path = BEMCheckBox;
 			sourceTree = "<group>";
 		};
+		F3E8C0F91F77ABD0006D7C61 /* GoodsPayment */ = {
+			isa = PBXGroup;
+			children = (
+				F3E8C0FA1F77ABD0006D7C61 /* Controller */,
+				F3E8C0FD1F77ABD0006D7C61 /* Model */,
+				F3E8C0FE1F77ABD0006D7C61 /* Views */,
+			);
+			path = GoodsPayment;
+			sourceTree = "<group>";
+		};
+		F3E8C0FA1F77ABD0006D7C61 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F3E8C0FB1F77ABD0006D7C61 /* CPNGoodsPaymentViewController.h */,
+				F3E8C0FC1F77ABD0006D7C61 /* CPNGoodsPaymentViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F3E8C0FD1F77ABD0006D7C61 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F3E8C0FE1F77ABD0006D7C61 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1668,6 +1705,7 @@
 				BF6F89C81F124AB5006D4187 /* FMDatabasePool.m in Sources */,
 				BF6F89911F124AB5006D4187 /* CPNCouponListSubViewController.m in Sources */,
 				BF6F89C71F124AB5006D4187 /* FMDatabaseAdditions.m in Sources */,
+				F3E8C0FF1F77ABD0006D7C61 /* CPNGoodsPaymentViewController.m in Sources */,
 				23733E0B1F6B6F9900B8B183 /* View+MASAdditions.m in Sources */,
 				BF6F89881F124AB5006D4187 /* UIView+Utils.m in Sources */,
 				BF6F89AE1F124AB5006D4187 /* CPNProductStarView.m in Sources */,
@@ -1686,7 +1724,6 @@
 				BF6F898A1F124AB5006D4187 /* CPNNavigationController.m in Sources */,
 				F36EB8501F6E5B2000DD251A /* CPNShopingCartItemCell.m in Sources */,
 				BF6F89E41F124AB5006D4187 /* SDImageCache.m in Sources */,
-				23733DE61F6B672200B8B183 /* CPNAboutViewController.m in Sources */,
 				BF6F89DC1F124AB5006D4187 /* MJRefreshHeader.m in Sources */,
 				BF6F89C21F124AB5006D4187 /* AFURLRequestSerialization.m in Sources */,
 				F34DBF831F57AF9B0091C424 /* SDCollectionViewCell.m in Sources */,
@@ -1746,6 +1783,7 @@
 				BF6F89A01F124AB5006D4187 /* CPNOrderListViewController.m in Sources */,
 				BF6F89C11F124AB5006D4187 /* AFSecurityPolicy.m in Sources */,
 				BF6F89841F124AB5006D4187 /* NSString+Md5.m in Sources */,
+				F3E8C0F81F77ABAD006D7C61 /* CPNAboutViewController.m in Sources */,
 				F3E8C0DA1F6E75C4006D7C61 /* BEMPathManager.m in Sources */,
 				23733E091F6B6F9900B8B183 /* NSArray+MASAdditions.m in Sources */,
 				F36EB8401F6E1BC600DD251A /* CPNShopInfoModel.m in Sources */,
