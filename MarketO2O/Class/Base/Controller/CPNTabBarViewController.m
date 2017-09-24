@@ -11,7 +11,7 @@
 #import "CPNHomePageViewController.h"
 #import "CPNPointsMarketPageViewController.h"
 #import "CPNUserCenterViewController.h"
-
+#import "CPNShoppingCartViewController.h"
 
 
 @interface CPNTabBarViewController ()<UITabBarControllerDelegate>
@@ -37,6 +37,7 @@
 {
     [self addChildVCWithViewController:[[CPNHomePageViewController alloc] init] title:@"首页" imageName:@"首页icon" selectedImageName:@"首页icon-选中"];
     [self addChildVCWithViewController:[[CPNPointsMarketPageViewController alloc] init] title:@"积分商城" imageName:@"商城icon" selectedImageName:@"商城icon-选中"];
+        [self addChildVCWithViewController:[[CPNShoppingCartViewController alloc] init] title:@"购物车" imageName:@"商城icon" selectedImageName:@"商城icon-选中"];
     [self addChildVCWithViewController:[[CPNUserCenterViewController alloc] init] title:@"个人中心" imageName:@"个人中心icon" selectedImageName:@"个人中心icon-选中"];
 }
 /**

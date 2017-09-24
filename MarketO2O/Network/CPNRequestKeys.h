@@ -42,5 +42,8 @@
 ///
 #define PARAM_KEY_ROWS                      @"rows"
 
+//
+#define PARAM_KEY_SHOP_ID                   @"shopid"
+
 
 #endif /* CPNRequestKeys_h */

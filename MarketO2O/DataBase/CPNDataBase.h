@@ -11,6 +11,7 @@
 @class CPNLoginUserInfoModel;
 @class CPNConfigSettingModel;
 @class CPNClientRegionModel;
+@class CPNShopingCartItemModel;
 
 typedef NS_ENUM(int,CPNDataBaseValueType) {
     CPNDataBaseValueTypeString,
@@ -106,5 +107,36 @@ typedef NS_ENUM(int,CPNDataBaseValueType) {
  *  @return 返回本地存储的配置信息对象
  */
 - (CPNConfigSettingModel *)configSettingInfo;
+
+
+#pragma mark --------------------------------------------------- 华丽的分割线
+
+#pragma mark - 加入购物车
+/**
+ 添加商品到购物车
+ 
+ @param item 需要添加的商品
+ */
+- (void)addProductionToShopCart:(CPNShopingCartItemModel *)item;
+
+/**
+ 删除商品
+ 
+ @param item 需要删除的商品
+ */
+- (void)deleteProductionFromShopCart:(CPNShopingCartItemModel *)item;
+
+/**
+ update商品信息
+ 
+ @param item 更新商品
+ */
+- (void)updateProductionFromShopCart:(CPNShopingCartItemModel *)item;
+
+/**
+ 获取购物车所有商品
+ */
+
+- (NSArray<CPNShopingCartItemModel*> *)getAllProductionInShopCart;
 
 @end

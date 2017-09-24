@@ -22,6 +22,8 @@
 #import "CPNCouponListCouponItemModel.h"
 #import "CPNGetCouponitemModel.h"
 #import "CPNConfigSettingModel.h"
+#import "CPNShopInfoModel.h"
+
 
 @implementation CPNHTTPClient
 
@@ -411,6 +413,42 @@ static CPNHTTPClient * __clientInstance = NULL;
                              isNeedShowLoading:isNeedLoading];
 }
 
+#pragma mark  获取商铺的信息
+/**
+ 获取商铺的信息
+ 
+ @param shopId 商铺的id
+ @param completeBlock 请求完成回调
+ */
+- (void)requestShopInfoWithShopId:(NSString *)shopId
+                    completeBlock:(void (^)(CPNShopInfoModel *shopInfo, CPNError *error))completeBlock
+{
+    CPNRequest *request = [[CPNRequest alloc] init];
+    [request setString:shopId forKey:PARAM_KEY_SHOP_ID];
+    
+    [request setRequestPath:PATH_SHOP_INFO];
+    [request setRequestMethod:CPN_REQUEST_METHOD_GET];
+    
+    CPNHTTPCompleteBlock finishBlock = ^(CPNResponse *response, CPNError *error) {
+        if (error) {
+            completeBlock(nil,error);
+        }else{
+            if (response.respBody && [response.respBody isKindOfClass:[NSArray class]]) {
+                CPNShopInfoModel *shopModel = [CPNShopInfoModel mj_objectWithKeyValues:response.respBody];
+                completeBlock(shopModel,nil);
+            }else{
+                CPNError *error = [[CPNError alloc] init];
+                error.errorCode = CPNErrorTypeDataParaseError;
+                error.errorMessage = CPNErrorMessageDataParaseError;
+                completeBlock(nil,error);
+            }
+        }
+    };
+    
+    [[CPNHTTPAgent instanceAgent] startRequest:request
+                                      response:finishBlock
+];
+}
 
 #pragma mark - 领取优惠券接口
 /**

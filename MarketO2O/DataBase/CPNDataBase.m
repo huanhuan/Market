@@ -12,10 +12,11 @@
 #import "CPNDataBaseManager.h"
 #import "CPNLoginUserInfoModel.h"
 #import "CPNConfigSettingModel.h"
+#import "CPNShopingCartItemModel.h"
 
 #define CPN_COMMON_SETTING_TABLE @"CPNCommonSetting"
 
-
+#define CPN_SHOPING_CART_PRODUCTION_INFOS @"CPNShopingCartProductionInfos"
 
 @implementation CPNDataBase
 
@@ -30,6 +31,14 @@ static CPNDataBase * _sharedDataBase;
             NSLog(@"创建表执行成功");
         }else{
             NSLog(@"创建表执行失败");
+        }
+        
+        NSString * sqlShopingCart = [NSString stringWithFormat:@"create table if not exists %@ (key VARCHAR UNIQUE, value VARCHAR, valueType INTEGER)",CPN_SHOPING_CART_PRODUCTION_INFOS];
+        BOOL resShopingCart = [CPNDataBaseManager executeUpdate:sqlShopingCart];
+        if (resShopingCart) {
+            NSLog(@"创建购物车表执行成功");
+        }else{
+            NSLog(@"创建购物车表执行失败");
         }
     }
     return _sharedDataBase;
@@ -264,6 +273,132 @@ static CPNDataBase * _sharedDataBase;
     return nil;
 }
 
+#pragma mark --------------------------------------------------- 华丽的分割线
+
+/**
+ *  插入CPN_SHOPING_CART_PRODUCTION_INFOS数据库一条记录
+ *
+ *  @param key       键值对中的key
+ *  @param value     键值对中得value
+ *  @param valueType value的数据类型（字符串型、数组型、字典型）
+ */
+- (void)insertShopCartWithKey:(NSString *)key value:(id)value valueType:(CPNDataBaseValueType)valueType{
+    NSString *keys = @"(key,value,valueType)";
+    NSString *values = [NSString stringWithFormat:@"('%@','%@',%d)",key,value,valueType];
+    NSMutableString *query = [[NSMutableString alloc] initWithFormat:@"INSERT OR REPLACE INTO %@ %@ VALUES %@",CPN_SHOPING_CART_PRODUCTION_INFOS,keys,values];
+    [CPNDataBaseManager executeUpdate:query];
+}
+
+/**
+ *  从数据库CPN_SHOPING_CART_PRODUCTION_INFOS中读取记录
+ *
+ *  @param key 需要读取的数据key值
+ *
+ *  @return 返回读取到得记录
+ */
+- (id)getShopCartItemValueWithKey:(NSString *)key{
+    if ([CPNInputValidUtil isBlinkString:key]) {
+        return nil;
+    }
+    NSString * query = [NSString stringWithFormat:@"SELECT value,valueType FROM %@ where key = '%@'",CPN_SHOPING_CART_PRODUCTION_INFOS,key];
+    
+    __block id valueObject = nil;
+    [CPNDataBaseManager executeQuery:query queryResBlock:^(FMResultSet *set) {
+        if ([set next]) {
+            NSInteger valueType = [set intForColumn:@"valueType"];
+            NSString *value = [set stringForColumn:@"value"];
+            if (valueType != CPNDataBaseValueTypeString) {
+                valueObject = [value mj_JSONObject];
+            }else{
+                valueObject = value;
+            }
+        }
+    }];
+    return valueObject;
+}
+
+/**
+ *  删除一条数据库CPN_SHOPING_CART_PRODUCTION_INFOS记录
+ *
+ *  @param key 需要删除的数据key值
+ */
+- (void)removeItemFromShopCartValueWithKey:(NSString *)key{
+    if ([CPNInputValidUtil isBlinkString:key]) {
+        return;
+    }
+    NSString * query = [NSString stringWithFormat:@"DELETE FROM %@ WHERE key = '%@'",CPN_SHOPING_CART_PRODUCTION_INFOS,key];
+    [CPNDataBaseManager executeUpdate:query];
+}
+
+#pragma mark - 加入购物车
+/**
+ 添加商品到购物车
+ 
+ @param item 需要添加的商品
+ */
+- (void)addProductionToShopCart:(CPNShopingCartItemModel *)item
+{
+    CPNShopingCartItemModel *saveItem = item;
+    id DBItem = [self getShopCartItemValueWithKey:item.id];
+    if (DBItem) {
+        CPNShopingCartItemModel *itemModel = [CPNShopingCartItemModel mj_objectWithKeyValues:DBItem];
+        itemModel.count ++;
+        saveItem = itemModel;
+    }
+    
+    //NSDictionary *saveData = [saveItem mj_keyValues];
+    NSString *value = [saveItem mj_JSONString];
+    [self insertShopCartWithKey:saveItem.id value:value valueType:CPNDataBaseValueTypeString];
+}
+
+/**
+ 删除商品
+ 
+ @param item 需要删除的商品
+ */
+- (void)deleteProductionFromShopCart:(CPNShopingCartItemModel *)item
+{
+    id DBItem = [self getShopCartItemValueWithKey:item.id];
+    if (DBItem) {
+        [self removeItemFromShopCartValueWithKey:item.id];
+    }
+}
+
+/**
+ update商品信息
+ 
+ @param item 更新商品
+ */
+- (void)updateProductionFromShopCart:(CPNShopingCartItemModel *)item
+{
+    NSDictionary *saveData = [item mj_keyValues];
+    id value = [saveData mj_JSONString];
+    [self insertShopCartWithKey:item.id value:value valueType:CPNDataBaseValueTypeNSDictionary];
+}
+
+/**
+ 获取购物车所有商品
+ */
+
+- (NSArray<CPNShopingCartItemModel*> *)getAllProductionInShopCart
+{
+    NSString * query = [NSString stringWithFormat:@"SELECT value,valueType FROM %@ ",CPN_SHOPING_CART_PRODUCTION_INFOS];
+    
+    __block NSMutableArray *allProductions = [NSMutableArray new];
+    [CPNDataBaseManager executeQuery:query queryResBlock:^(FMResultSet *set) {
+        while ([set next]) {
+            NSInteger valueType = [set intForColumn:@"valueType"];
+            NSString *value = [set stringForColumn:@"value"];
+            if (valueType == CPNDataBaseValueTypeString) {
+                id valueTemp = [value mj_JSONObject];
+                CPNShopingCartItemModel *model = [CPNShopingCartItemModel mj_objectWithKeyValues:valueTemp];
+                [allProductions addObject:model];
+            }
+        }
+    }];
+    return allProductions;
+
+}
 
 
 @end

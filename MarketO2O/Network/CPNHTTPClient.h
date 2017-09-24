@@ -12,6 +12,7 @@
 @class CPNError;
 @class CPNLoginUserInfoModel;
 @class CPNHomePageProductItemModel;
+@class CPNShopInfoModel;
 
 
 @interface CPNHTTPClient : NSObject
@@ -125,6 +126,15 @@
                             isNeedLoading:(BOOL)isNeedLoading
                             completeBlock:(void (^)(NSArray *couponList, CPNError *error))completeBlock;
 
+#pragma mark  获取商铺的信息
+/**
+ 获取商铺的信息
+ 
+ @param shopId 商铺的id
+ @param completeBlock 请求完成回调
+ */
+- (void)requestShopInfoWithShopId:(NSString *)shopId
+                    completeBlock:(void (^)(CPNShopInfoModel *shopInfo, CPNError *error))completeBlock;
 
 #pragma mark - 领取优惠券接口
 /**

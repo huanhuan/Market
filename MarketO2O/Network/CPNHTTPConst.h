@@ -102,5 +102,11 @@ STATIC_STRING(API_URL)                          @"http://112.74.56.142";
  */
 #define PATH_GOODSINFO_GETGOODSDETAIL           @"/coupons/v1/goodsInfo/getgoodsdetail.do"
 
+/**
+ 获取商铺的信息
+ 
+ @return
+ */
+#define PATH_SHOP_INFO                          @"/coupons/v1/goodsInfo/getgoodsdetail.do"
 
 #endif
