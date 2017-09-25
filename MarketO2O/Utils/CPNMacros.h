@@ -21,7 +21,8 @@ alpha:1.0]
 
 #define MAIN_SCREEN_HEIGHT    [UIScreen mainScreen].bounds.size.height
 #define MAIN_SCREEN_WIDTH     [UIScreen mainScreen].bounds.size.width
-
+//一个像素
+#define onePixel (1.0/[UIScreen mainScreen].scale)
 
 #define CPN_SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)
 #define CPN_SYSTEM_VERSION_GREATER_THAN(v)              ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending)

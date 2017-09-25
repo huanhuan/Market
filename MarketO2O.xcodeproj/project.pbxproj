@@ -23,6 +23,13 @@
 		2376B1C41F78F2D000FEE2A8 /* CPNUserAdressInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2376B1C31F78F2D000FEE2A8 /* CPNUserAdressInfoModel.m */; };
 		2376B1CB1F78FA9D00FEE2A8 /* CPNAddAdressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2376B1CA1F78FA9D00FEE2A8 /* CPNAddAdressViewController.m */; };
 		2376B1CE1F78FFB200FEE2A8 /* UIAutoScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2376B1CD1F78FFB200FEE2A8 /* UIAutoScrollView.m */; };
+		2376B1D11F791B7D00FEE2A8 /* UITextView+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2376B1D01F791B7D00FEE2A8 /* UITextView+Placeholder.m */; };
+		2376B1D61F7921E900FEE2A8 /* area.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2376B1D31F7921E900FEE2A8 /* area.plist */; };
+		2376B1D71F7921E900FEE2A8 /* STPickerArea.m in Sources */ = {isa = PBXBuildFile; fileRef = 2376B1D51F7921E900FEE2A8 /* STPickerArea.m */; };
+		2376B1DB1F79224D00FEE2A8 /* STPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2376B1DA1F79224D00FEE2A8 /* STPickerView.m */; };
+		2376B1E41F79227100FEE2A8 /* STConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 2376B1DF1F79227100FEE2A8 /* STConst.m */; };
+		2376B1E51F79227100FEE2A8 /* STUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 2376B1E11F79227100FEE2A8 /* STUI.m */; };
+		2376B1E61F79227100FEE2A8 /* UIView+ST.m in Sources */ = {isa = PBXBuildFile; fileRef = 2376B1E31F79227100FEE2A8 /* UIView+ST.m */; };
 		BF6F89831F124AB5006D4187 /* NSDate+CPNDate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6F88631F124AB4006D4187 /* NSDate+CPNDate.m */; };
 		BF6F89841F124AB5006D4187 /* NSString+Md5.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6F88651F124AB4006D4187 /* NSString+Md5.m */; };
 		BF6F89851F124AB5006D4187 /* NSString+ValidPointCount.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6F88671F124AB4006D4187 /* NSString+ValidPointCount.m */; };
@@ -229,6 +236,20 @@
 		2376B1CA1F78FA9D00FEE2A8 /* CPNAddAdressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPNAddAdressViewController.m; sourceTree = "<group>"; };
 		2376B1CC1F78FFB200FEE2A8 /* UIAutoScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIAutoScrollView.h; sourceTree = "<group>"; };
 		2376B1CD1F78FFB200FEE2A8 /* UIAutoScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIAutoScrollView.m; sourceTree = "<group>"; };
+		2376B1CF1F791B7D00FEE2A8 /* UITextView+Placeholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+Placeholder.h"; sourceTree = "<group>"; };
+		2376B1D01F791B7D00FEE2A8 /* UITextView+Placeholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Placeholder.m"; sourceTree = "<group>"; };
+		2376B1D31F7921E900FEE2A8 /* area.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = area.plist; sourceTree = "<group>"; };
+		2376B1D41F7921E900FEE2A8 /* STPickerArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPickerArea.h; sourceTree = "<group>"; };
+		2376B1D51F7921E900FEE2A8 /* STPickerArea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPickerArea.m; sourceTree = "<group>"; };
+		2376B1D91F79224D00FEE2A8 /* STPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPickerView.h; sourceTree = "<group>"; };
+		2376B1DA1F79224D00FEE2A8 /* STPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPickerView.m; sourceTree = "<group>"; };
+		2376B1DD1F79227100FEE2A8 /* STConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STConfig.h; sourceTree = "<group>"; };
+		2376B1DE1F79227100FEE2A8 /* STConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STConst.h; sourceTree = "<group>"; };
+		2376B1DF1F79227100FEE2A8 /* STConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STConst.m; sourceTree = "<group>"; };
+		2376B1E01F79227100FEE2A8 /* STUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STUI.h; sourceTree = "<group>"; };
+		2376B1E11F79227100FEE2A8 /* STUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STUI.m; sourceTree = "<group>"; };
+		2376B1E21F79227100FEE2A8 /* UIView+ST.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ST.h"; sourceTree = "<group>"; };
+		2376B1E31F79227100FEE2A8 /* UIView+ST.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ST.m"; sourceTree = "<group>"; };
 		BF6F88621F124AB4006D4187 /* NSDate+CPNDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+CPNDate.h"; sourceTree = "<group>"; };
 		BF6F88631F124AB4006D4187 /* NSDate+CPNDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+CPNDate.m"; sourceTree = "<group>"; };
 		BF6F88641F124AB4006D4187 /* NSString+Md5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Md5.h"; sourceTree = "<group>"; };
@@ -674,10 +695,48 @@
 		2376B1C81F78FA8300FEE2A8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2376B1DC1F79227100FEE2A8 /* STConfig */,
+				2376B1D81F79224D00FEE2A8 /* STPickerView */,
+				2376B1D21F7921E900FEE2A8 /* Area(地区) */,
+				2376B1CF1F791B7D00FEE2A8 /* UITextView+Placeholder.h */,
+				2376B1D01F791B7D00FEE2A8 /* UITextView+Placeholder.m */,
 				2376B1CC1F78FFB200FEE2A8 /* UIAutoScrollView.h */,
 				2376B1CD1F78FFB200FEE2A8 /* UIAutoScrollView.m */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		2376B1D21F7921E900FEE2A8 /* Area(地区) */ = {
+			isa = PBXGroup;
+			children = (
+				2376B1D31F7921E900FEE2A8 /* area.plist */,
+				2376B1D41F7921E900FEE2A8 /* STPickerArea.h */,
+				2376B1D51F7921E900FEE2A8 /* STPickerArea.m */,
+			);
+			path = "Area(地区)";
+			sourceTree = "<group>";
+		};
+		2376B1D81F79224D00FEE2A8 /* STPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				2376B1D91F79224D00FEE2A8 /* STPickerView.h */,
+				2376B1DA1F79224D00FEE2A8 /* STPickerView.m */,
+			);
+			path = STPickerView;
+			sourceTree = "<group>";
+		};
+		2376B1DC1F79227100FEE2A8 /* STConfig */ = {
+			isa = PBXGroup;
+			children = (
+				2376B1DD1F79227100FEE2A8 /* STConfig.h */,
+				2376B1DE1F79227100FEE2A8 /* STConst.h */,
+				2376B1DF1F79227100FEE2A8 /* STConst.m */,
+				2376B1E01F79227100FEE2A8 /* STUI.h */,
+				2376B1E11F79227100FEE2A8 /* STUI.m */,
+				2376B1E21F79227100FEE2A8 /* UIView+ST.h */,
+				2376B1E31F79227100FEE2A8 /* UIView+ST.m */,
+			);
+			path = STConfig;
 			sourceTree = "<group>";
 		};
 		BF6F88601F124AB4006D4187 /* MarketO2O */ = {
@@ -1735,6 +1794,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				23733E021F6B6F9900B8B183 /* Info.plist in Resources */,
+				2376B1D61F7921E900FEE2A8 /* area.plist in Resources */,
 				F392BA831F5C02CB00D2B64A /* AMap.bundle in Resources */,
 				F392BA841F5C02CB00D2B64A /* AMapNavi.bundle in Resources */,
 				BF6F8A091F127B0F006D4187 /* README.txt in Resources */,
@@ -1770,6 +1830,7 @@
 				BF6F89AE1F124AB5006D4187 /* CPNProductStarView.m in Sources */,
 				2376B1CB1F78FA9D00FEE2A8 /* CPNAddAdressViewController.m in Sources */,
 				BFDE69F31F19CECA0006B4E1 /* CPNWeChatLoginServer.m in Sources */,
+				2376B1E61F79227100FEE2A8 /* UIView+ST.m in Sources */,
 				BF95D8411F13BF4500679AD3 /* CPNLabelAndTextFieldView.m in Sources */,
 				BF6F89CC1F124AB5006D4187 /* MJExtensionConst.m in Sources */,
 				F36EB84D1F6E58E800DD251A /* CPNShopingCartManager.m in Sources */,
@@ -1783,11 +1844,13 @@
 				BF6F89DE1F124AB5006D4187 /* MJRefreshLegendHeader.m in Sources */,
 				BF6F898A1F124AB5006D4187 /* CPNNavigationController.m in Sources */,
 				F36EB8501F6E5B2000DD251A /* CPNShopingCartItemCell.m in Sources */,
+				2376B1E41F79227100FEE2A8 /* STConst.m in Sources */,
 				BF6F89E41F124AB5006D4187 /* SDImageCache.m in Sources */,
 				BF6F89DC1F124AB5006D4187 /* MJRefreshHeader.m in Sources */,
 				BF6F89C21F124AB5006D4187 /* AFURLRequestSerialization.m in Sources */,
 				F34DBF831F57AF9B0091C424 /* SDCollectionViewCell.m in Sources */,
 				BF6F89C41F124AB5006D4187 /* AFURLSessionManager.m in Sources */,
+				2376B1D71F7921E900FEE2A8 /* STPickerArea.m in Sources */,
 				BF6F89B31F124AB5006D4187 /* CPNUserInfoView.m in Sources */,
 				BF6F89931F124AB5006D4187 /* CPNCouponListItemTableViewCell.m in Sources */,
 				BF6F89CA1F124AB5006D4187 /* FMResultSet.m in Sources */,
@@ -1811,6 +1874,7 @@
 				BF6F89E31F124AB5006D4187 /* NSData+ImageContentType.m in Sources */,
 				BF6F89F01F124AB5006D4187 /* UIImageView+WebCache.m in Sources */,
 				BF6F898C1F124AB5006D4187 /* CPNBaseModel.m in Sources */,
+				2376B1D11F791B7D00FEE2A8 /* UITextView+Placeholder.m in Sources */,
 				23733E051F6B6F9900B8B183 /* MASConstraintMaker.m in Sources */,
 				BF6F89C91F124AB5006D4187 /* FMDatabaseQueue.m in Sources */,
 				23733E041F6B6F9900B8B183 /* MASConstraint.m in Sources */,
@@ -1872,7 +1936,9 @@
 				BF6F899D1F124AB5006D4187 /* CPNHomeModuleActionView.m in Sources */,
 				BF6F89B61F124AB5006D4187 /* CPNHTTPAgent.m in Sources */,
 				BF6F89C01F124AB5006D4187 /* AFNetworkReachabilityManager.m in Sources */,
+				2376B1E51F79227100FEE2A8 /* STUI.m in Sources */,
 				F36EB84A1F6E257300DD251A /* CPNShopingCartItemModel.m in Sources */,
+				2376B1DB1F79224D00FEE2A8 /* STPickerView.m in Sources */,
 				BF6F89EF1F124AB5006D4187 /* UIImageView+HighlightedWebCache.m in Sources */,
 				BF775A1E1F24A01D00B02584 /* UIView+CPNErrorHubTip.m in Sources */,
 				BF6F8A0D1F127EB0006D4187 /* CPNAlertView.m in Sources */,
