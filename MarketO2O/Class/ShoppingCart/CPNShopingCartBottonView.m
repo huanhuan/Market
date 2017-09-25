@@ -75,7 +75,7 @@
 {
     if (!_allSelectLabel) {
         _allSelectLabel = [CPNCommonLabel commonLabelWithTitle:@"全选"
-                                                       textFont:CPNCommonFontTwelveSize
+                                                       textFont:CPNCommonFontFifteenSize
                                                       textColor:CPNCommonBlackColor];
         _allSelectLabel.numberOfLines = 1;
         [self addSubview:_allSelectLabel];
@@ -87,7 +87,7 @@
 {
     if (!_totalMoneyLabel) {
         _totalMoneyLabel = [CPNCommonLabel commonLabelWithTitle:@"总计："
-                                                      textFont:CPNCommonFontTwelveSize
+                                                      textFont:CPNCommonFontFifteenSize
                                                      textColor:CPNCommonBlackColor];
         _totalMoneyLabel.numberOfLines = 1;
         [self addSubview:_totalMoneyLabel];
@@ -99,7 +99,7 @@
 {
     if (!_moneyCountLabel) {
         _moneyCountLabel = [CPNCommonLabel commonLabelWithTitle:@"积分 0.0"
-                                                      textFont:CPNCommonFontTwelveSize
+                                                      textFont:CPNCommonFontFifteenSize
                                                      textColor:CPNCommonLightRedColor];
         _moneyCountLabel.numberOfLines = 1;
         [self addSubview:_moneyCountLabel];
@@ -112,7 +112,7 @@
     if (!_confirmButton) {
         _confirmButton = [[UIButton alloc] initWithFrame:CGRectZero];
         [_confirmButton setBackgroundColor:CPNCommonMaxLightGrayColor];
-        [_confirmButton.titleLabel setFont:CPNCommonFontTwelveSize];
+        [_confirmButton.titleLabel setFont:CPNCommonFontFifteenSize];
         [_confirmButton setTitle:@"去结算(0件)" forState:UIControlStateNormal];
         [_confirmButton setTitleColor:CPNCommonWhiteColor forState:UIControlStateNormal];
         [_confirmButton addTarget:self action:@selector(confirmButtonClick:) forControlEvents:UIControlEventTouchUpInside];

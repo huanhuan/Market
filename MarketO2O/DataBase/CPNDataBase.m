@@ -371,9 +371,9 @@ static CPNDataBase * _sharedDataBase;
  */
 - (void)updateProductionFromShopCart:(CPNShopingCartItemModel *)item
 {
-    NSDictionary *saveData = [item mj_keyValues];
-    id value = [saveData mj_JSONString];
-    [self insertShopCartWithKey:item.id value:value valueType:CPNDataBaseValueTypeNSDictionary];
+//    NSDictionary *saveData = [item mj_keyValues];
+    id value = [item mj_JSONString];
+    [self insertShopCartWithKey:item.id value:value valueType:CPNDataBaseValueTypeString];
 }
 
 /**
