@@ -7,7 +7,10 @@
 //
 
 #import "CPNBaseViewController.h"
+#import "CPNUserAddressInfoModel.h"
+
 
 @interface CPNAddAdressViewController : CPNBaseViewController
 
+- (void)changeAddress:(CPNUserAddressInfoModel *)addressInfoModel;
 @end

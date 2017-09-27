@@ -13,6 +13,7 @@
 #import "CPNLoginUserInfoModel.h"
 #import "CPNConfigSettingModel.h"
 #import "CPNShopingCartItemModel.h"
+#import "CPNUserAddressInfoModel.h"
 
 #define CPN_COMMON_SETTING_TABLE @"CPNCommonSetting"
 
@@ -237,6 +238,19 @@ static CPNDataBase * _sharedDataBase;
     return nil;
 }
 
+- (void)saveUserAddressInfo:(CPNUserAddressInfoModel *)useradressInfo
+{
+    NSString *value = [useradressInfo mj_JSONString];
+    [self insertCommonSettingWithKey:@"userAddressInfo" value:value valueType:CPNDataBaseValueTypeString];
+}
+
+- (CPNUserAddressInfoModel *)getUserAddressInfo
+{
+    NSString *value = [self getSettingValueWithKey:@"userAddressInfo"];
+    id temp = [value mj_JSONObject];
+    CPNUserAddressInfoModel *userAddressInfo = [CPNUserAddressInfoModel mj_objectWithKeyValues:temp];
+    return userAddressInfo;
+}
 
 /**
  *  退出登录时清除本地存储的用户信息

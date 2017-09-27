@@ -6,8 +6,8 @@
 //  Copyright © 2017 Maket. All rights reserved.
 //
 
-#import "CPNUserAdressInfoModel.h"
+#import "CPNUserAddressInfoModel.h"
 
-@implementation CPNUserAdressInfoModel
+@implementation CPNUserAddressInfoModel
 
 @end

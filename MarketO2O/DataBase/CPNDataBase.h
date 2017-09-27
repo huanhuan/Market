@@ -12,6 +12,7 @@
 @class CPNConfigSettingModel;
 @class CPNClientRegionModel;
 @class CPNShopingCartItemModel;
+@class CPNUserAddressInfoModel;
 
 typedef NS_ENUM(int,CPNDataBaseValueType) {
     CPNDataBaseValueTypeString,
@@ -108,6 +109,16 @@ typedef NS_ENUM(int,CPNDataBaseValueType) {
  */
 - (CPNConfigSettingModel *)configSettingInfo;
 
+/**
+ * 保存收获地址相关信息
+ *
+ *
+ */
+- (void)saveUserAddressInfo:(CPNUserAddressInfoModel *)useradressInfo;
+/**
+ *返回收获地址
+ */
+- (CPNUserAddressInfoModel *)getUserAddressInfo;
 
 #pragma mark --------------------------------------------------- 华丽的分割线
 

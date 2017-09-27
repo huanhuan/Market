@@ -10,6 +10,7 @@
 #import "UIAutoScrollView.h"
 #import "UITextView+Placeholder.h"
 #import "STPickerArea.h"
+#import "CPNDataBase.h"
 
 @interface CPNAddAdressViewController ()
 
@@ -20,6 +21,7 @@
 @property (nonatomic, strong)UITextView *detailAddress;
 @property (nonatomic, strong)UIButton *confirmButton;
 @property (nonatomic, strong)STPickerArea *pickerArea;
+@property (nonatomic, strong)CPNUserAddressInfoModel *addressInfoModel;
 
 @end
 
@@ -102,6 +104,19 @@
     [self.scrollView addSubview:line3];
     [self.scrollView addAutoScrollAbility];
     [self.cityAddress setDelegate:(id<UITextFieldDelegate>)self];
+    
+    [self.name setText:_addressInfoModel.name];
+    [self.cityAddress setText:_addressInfoModel.city];
+    [self.detailAddress setText:_addressInfoModel.address];
+    [self.telephoneNumber setText:_addressInfoModel.telephoneNumber];
+    if (self.addressInfoModel) {
+        self.title = @"修改地址";
+    }
+}
+
+- (void)changeAddress:(CPNUserAddressInfoModel *)addressInfoModel
+{
+    self.addressInfoModel = addressInfoModel;
 }
 
 -(void)keyboardHide:(id)sender
@@ -128,13 +143,77 @@
 
 - (void)confirmButtonClick:(id)sender
 {
+    if ([self.name.text isEqualToString:@""]) {
+        UIAlertController*alertController = [UIAlertController alertControllerWithTitle:nil message:@"收货人不能为空" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *otherAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction*action) {
+            [self.name selectAll:self];
+        }];
+        [alertController addAction:otherAction];
+        [self presentViewController:alertController animated:YES completion:nil];
+        return;
+    }
+    
+    if ([self.telephoneNumber.text isEqualToString:@""]) {
+        UIAlertController*alertController = [UIAlertController alertControllerWithTitle:nil message:@"联系方式不能为空" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *otherAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction*action) {
+            [self.telephoneNumber selectAll:self];
+        }];
+        [alertController addAction:otherAction];
+        [self presentViewController:alertController animated:YES completion:nil];
+        return;
+    }else
+    {
+        NSString *regex = @"^((13[0-9])|(15[^4,\\D])|(18[0,0-9]))\\d{8}$";
+        NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
+        BOOL isMatch = [pred evaluateWithObject:self.telephoneNumber.text];
+        if(isMatch) { //有效手机号
+            
+            
+        }else//无效手机号
+        {
+            UIAlertController*alertController = [UIAlertController alertControllerWithTitle:nil message:@"无效的手机号码,请重新输入..." preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *otherAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction*action) {
+                [self.telephoneNumber selectAll:self];
+            }];
+            [alertController addAction:otherAction];
+            [self presentViewController:alertController animated:YES completion:nil];
+        }
 
+    }
+    
+    if ([self.cityAddress.text isEqualToString:@""]) {
+        UIAlertController*alertController = [UIAlertController alertControllerWithTitle:nil message:@"收获地区不能为空" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *otherAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction*action) {
+            [self.cityAddress selectAll:self];
+        }];
+        [alertController addAction:otherAction];
+        [self presentViewController:alertController animated:YES completion:nil];
+        return;
+    }
+    
+    if ([self.detailAddress.text isEqualToString:@""]) {
+        UIAlertController*alertController = [UIAlertController alertControllerWithTitle:nil message:@"详细地址不能为空" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *otherAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction*action) {
+            [self.detailAddress selectAll:self];
+        }];
+        [alertController addAction:otherAction];
+        [self presentViewController:alertController animated:YES completion:nil];
+        return;
+    }
+    
+    CPNUserAddressInfoModel *model = [CPNUserAddressInfoModel new];
+    model.name = self.name.text;
+    model.telephoneNumber = self.telephoneNumber.text;
+    model.city = self.cityAddress.text;
+    model.address = self.detailAddress.text;
+    [[CPNDataBase defaultDataBase] saveUserAddressInfo:model];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {
     [self keyboardHide:nil];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         STPickerArea *pickerArea = [[STPickerArea alloc]init];
         [pickerArea setDelegate:(id <STPickerAreaDelegate>)self];
         [pickerArea setContentMode:STPickerContentModeBottom];

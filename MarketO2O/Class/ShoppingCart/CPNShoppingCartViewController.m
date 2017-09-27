@@ -15,7 +15,6 @@
 #import "CPNShopingCartBottonView.h"
 
 #import "CPNGoodsPaymentViewController.h"
-#import "CPNAddAdressViewController.h"
 
 static NSString *cellIdentifier = @"cellIdentifier";
 
@@ -202,14 +201,14 @@ static NSString *cellIdentifier = @"cellIdentifier";
 - (void)confirmButtonClick
 {
     AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-//    if (!delegate.loginUserModel) {
-//        [SVProgressHUD showInfoWithStatus:@"需要登录后才能购买"];
-//        return;
-//    }
+    if (!delegate.loginUserModel) {
+        [SVProgressHUD showInfoWithStatus:@"需要登录后才能购买"];
+        return;
+    }
     if (self.selectedProductionArray.count > 0) {
-        CPNAddAdressViewController *VC = [CPNAddAdressViewController new];
+        CPNGoodsPaymentViewController *VC = [CPNGoodsPaymentViewController new];
         VC.hidesBottomBarWhenPushed = YES;
-//        VC.selectedProductionArray = [self.selectedProductionArray copy];
+        VC.selectedProductionArray = [self.selectedProductionArray copy];
         [self.navigationController pushViewController:VC animated:YES];
     }
 

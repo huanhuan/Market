@@ -9,14 +9,20 @@
 #import "CPNGoodsPaymentViewController.h"
 #import "CPNGoodsPaymentCell.h"
 #import "CPNGoodsPayMentBottonView.h"
+#import "CPNUserAddressInfoModel.h"
+#import "CPNAddAdressViewController.h"
+#import "CPNAddressTableViewCell.h"
+#import "UITableView+FDTemplateLayoutCell.h"
 
 @interface CPNGoodsPaymentViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView                   *tableView;
 @property (nonatomic, strong) CPNGoodsPayMentBottonView     *bottonView;
+@property (nonatomic, strong) CPNUserAddressInfoModel       *userAddressInfoModel;
 @end
 
 static NSString *cellIdentifier = @"cellIdentifier";
+static NSString *addressIdentifier = @"addressIdentifier";
 
 @implementation CPNGoodsPaymentViewController
 
@@ -26,7 +32,7 @@ static NSString *cellIdentifier = @"cellIdentifier";
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.and.left.and.right.equalTo(self.view);
     }];
-    
+
     [self.bottonView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(self.view.mas_bottom);
         make.width.equalTo(self.view);
@@ -55,6 +61,18 @@ static NSString *cellIdentifier = @"cellIdentifier";
 //    [self.bottonView update:goodsNeedPoint goodsNeedPoints:goodsNeedPoint needPayMoney:needMoney];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    self.userAddressInfoModel = [[CPNDataBase defaultDataBase] getUserAddressInfo];
+    if (!self.userAddressInfoModel) {
+        CPNAddAdressViewController *VC = [CPNAddAdressViewController new];
+        VC.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:VC animated:YES];
+    }
+    [self.tableView reloadData];
+}
+
 #pragma mark - tableViewDelegate/dataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -63,24 +81,50 @@ static NSString *cellIdentifier = @"cellIdentifier";
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.selectedProductionArray.count;
+    return self.selectedProductionArray.count + 1;
 }
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return [CPNGoodsPaymentCell cellHeight];
+    
+    if (indexPath.row == 0) {
+        WeakSelf;
+        return [self.tableView fd_heightForCellWithIdentifier:addressIdentifier cacheByKey:self.userAddressInfoModel.name  configuration:^(UITableViewCell *cell)
+                {
+                    [(CPNAddressTableViewCell *)cell setUserAddressInfoModel:weakSelf.userAddressInfoModel];
+                }];
+    }else
+        return [CPNGoodsPaymentCell cellHeight];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    CPNGoodsPaymentCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier
-                                                                   forIndexPath:indexPath];
-    if (self.selectedProductionArray.count > indexPath.row) {
-        CPNShopingCartItemModel *itemModel = self.selectedProductionArray[indexPath.row];
-        cell.itemModel = itemModel;
+    
+    UITableViewCell *cell = nil;
+    if (indexPath.row == 0) {
+        cell = [tableView dequeueReusableCellWithIdentifier:addressIdentifier forIndexPath:indexPath];
+        [(CPNAddressTableViewCell *)cell setUserAddressInfoModel:self.userAddressInfoModel];
+    }else
+    {
+        cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier
+                                                                    forIndexPath:indexPath];
+        if (self.selectedProductionArray.count + 1 > indexPath.row) {
+            CPNShopingCartItemModel *itemModel = self.selectedProductionArray[indexPath.row - 1];
+            [(CPNGoodsPaymentCell *)cell setItemModel:itemModel];
+        }
     }
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.row == 0) {
+        CPNAddAdressViewController *vc = [[CPNAddAdressViewController alloc] init];
+        [vc changeAddress:self.userAddressInfoModel];
+        [vc setHidesBottomBarWhenPushed:YES];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+}
 
 /**
  商品显示的列表
@@ -90,11 +134,13 @@ static NSString *cellIdentifier = @"cellIdentifier";
 - (UITableView *)tableView{
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:self.view.bounds
-                                                  style:UITableViewStyleGrouped];
+                                                  style:UITableViewStylePlain];
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.backgroundColor = CPNCommonContrllorBackgroundColor;
         [_tableView registerClass:[CPNGoodsPaymentCell class] forCellReuseIdentifier:cellIdentifier];
+        [_tableView registerClass:[CPNAddressTableViewCell class] forCellReuseIdentifier:addressIdentifier];
+        
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         [self.view addSubview:_tableView];
     }
@@ -109,4 +155,6 @@ static NSString *cellIdentifier = @"cellIdentifier";
     }
     return _bottonView;
 }
+
+
 @end
