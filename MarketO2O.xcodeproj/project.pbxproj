@@ -201,6 +201,7 @@
 		F3E8C0DF1F6E7C9C006D7C61 /* CPNShopingCartBottonView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E8C0DE1F6E7C9C006D7C61 /* CPNShopingCartBottonView.m */; };
 		F3E8C0F81F77ABAD006D7C61 /* CPNAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E8C0F61F77ABAD006D7C61 /* CPNAboutViewController.m */; };
 		F3E8C0FF1F77ABD0006D7C61 /* CPNGoodsPaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E8C0FC1F77ABD0006D7C61 /* CPNGoodsPaymentViewController.m */; };
+		F3E8C1041F8EF9F3006D7C61 /* CPNExpressCheckViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E8C1031F8EF9F3006D7C61 /* CPNExpressCheckViewController.m */; };
 		F3FDE2B51F403455006590BE /* NSString+Jason.m in Sources */ = {isa = PBXBuildFile; fileRef = F3FDE2B41F403455006590BE /* NSString+Jason.m */; };
 /* End PBXBuildFile section */
 
@@ -592,6 +593,8 @@
 		F3E8C0F71F77ABAD006D7C61 /* CPNAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPNAboutViewController.h; sourceTree = "<group>"; };
 		F3E8C0FB1F77ABD0006D7C61 /* CPNGoodsPaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPNGoodsPaymentViewController.h; sourceTree = "<group>"; };
 		F3E8C0FC1F77ABD0006D7C61 /* CPNGoodsPaymentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPNGoodsPaymentViewController.m; sourceTree = "<group>"; };
+		F3E8C1021F8EF9F3006D7C61 /* CPNExpressCheckViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPNExpressCheckViewController.h; sourceTree = "<group>"; };
+		F3E8C1031F8EF9F3006D7C61 /* CPNExpressCheckViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPNExpressCheckViewController.m; sourceTree = "<group>"; };
 		F3FDE2B31F403455006590BE /* NSString+Jason.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Jason.h"; sourceTree = "<group>"; };
 		F3FDE2B41F403455006590BE /* NSString+Jason.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Jason.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -810,6 +813,7 @@
 		BF6F886E1F124AB4006D4187 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				F3E8C1011F8EF9DE006D7C61 /* expressCheck */,
 				2376B1C51F78FA8300FEE2A8 /* AddAdress */,
 				F3E8C0F91F77ABD0006D7C61 /* GoodsPayment */,
 				F36EB8411F6E224100DD251A /* ShoppingCart */,
@@ -1767,6 +1771,15 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		F3E8C1011F8EF9DE006D7C61 /* expressCheck */ = {
+			isa = PBXGroup;
+			children = (
+				F3E8C1021F8EF9F3006D7C61 /* CPNExpressCheckViewController.h */,
+				F3E8C1031F8EF9F3006D7C61 /* CPNExpressCheckViewController.m */,
+			);
+			path = expressCheck;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1982,6 +1995,7 @@
 				BF6F8A0D1F127EB0006D4187 /* CPNAlertView.m in Sources */,
 				BF6F89E91F124AB5006D4187 /* SDWebImageManager.m in Sources */,
 				BF6F89961F124AB5006D4187 /* CPNGetCouponitemModel.m in Sources */,
+				F3E8C1041F8EF9F3006D7C61 /* CPNExpressCheckViewController.m in Sources */,
 				BF6F89A71F124AB5006D4187 /* CPNPointsMarketCategoryModel.m in Sources */,
 				BF6F89CF1F124AB5006D4187 /* MJPropertyKey.m in Sources */,
 				BF6F89D31F124AB5006D4187 /* NSObject+MJKeyValue.m in Sources */,
