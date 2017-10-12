@@ -53,6 +53,8 @@
 @property (nonatomic, copy) NSString        *shopStatus;
 @property (nonatomic, copy) NSString        *shopPhone;
 @property (nonatomic, copy) NSString        *shopActive;
+@property (nonatomic, copy) NSString        *latitude;
+@property (nonatomic, copy) NSString        *longitude;
 
 @property (nonatomic, copy) NSString        *userId;
 

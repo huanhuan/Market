@@ -9,7 +9,7 @@
 #import "CPNCouponListSubViewController.h"
 #import "CPNCouponListItemTableViewCell.h"
 #import "CPNCouponListCouponItemModel.h"
-
+#import "CPNMapNavManager.h"
 static NSString *cellIdentifier = @"cellIdentifier";
 
 @interface CPNCouponListSubViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -94,6 +94,13 @@ static NSString *cellIdentifier = @"cellIdentifier";
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    CPNCouponListCouponItemModel *couponModel = self.dataSource[indexPath.row];
+    if (couponModel.latitude && couponModel.longitude) {
+        [[CPNMapNavManager sharedCPNMapNavManager] mapNavTargetPointWithLatitude:[couponModel.latitude floatValue] longitude:[couponModel.longitude floatValue] name:couponModel.shopName];
+    }
+}
 #pragma mark - netWorkRequest
 
 /**
