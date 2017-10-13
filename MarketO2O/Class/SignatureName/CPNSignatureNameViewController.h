@@ -7,6 +7,10 @@
 //
 #import "CPNBaseViewController.h"
 
+typedef void (^SignatureNameCompleteBlock)(UIImage *signatureImage);
+
 @interface CPNSignatureNameViewController : CPNBaseViewController
+
+- (id)initWithCompleteBlock:(SignatureNameCompleteBlock)block;
 
 @end

@@ -65,4 +65,9 @@
 
 @property (nonatomic, copy) NSString    *userId;
 
+/**
+ 订单物流号
+ */
+@property (nonatomic, copy)NSString *waybillNumber;
+
 @end

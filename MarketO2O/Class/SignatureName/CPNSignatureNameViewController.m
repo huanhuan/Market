@@ -18,6 +18,7 @@
 
 @property (nonatomic, strong)PPSSignatureView *signatureView;
 
+@property (nonatomic, copy)SignatureNameCompleteBlock completeBlock;
 
 
 @property (nonatomic, strong)UIButton *button;
@@ -26,11 +27,11 @@
 
 @implementation CPNSignatureNameViewController
 
-- (id)init
+- (id)initWithCompleteBlock:(SignatureNameCompleteBlock)block
 {
     if (self = [super init]) {
 
-        
+        self.completeBlock = block;
     }
     return self;
 }
@@ -85,7 +86,11 @@
 
 - (void)confirmButtonClick
 {
-        
+    UIImage *image = [self.signatureView signatureImage];
+    if (self.completeBlock) {
+        self.completeBlock(image);
+    }
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

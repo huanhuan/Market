@@ -9,6 +9,7 @@
 #import "CPNOrderListViewController.h"
 #import "CPNOrderListItemTableViewCell.h"
 #import "CPNOrderListItemModel.h"
+#import "CPNExpressCheckViewController.h"
 
 static NSString *cellIdentifier = @"cellIdentifier";
 
@@ -115,6 +116,16 @@ static NSString *cellIdentifier = @"cellIdentifier";
         cell.orderModel = itemModel;
     }
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    CPNOrderListItemModel *itemModel = self.orderArray[indexPath.row];
+    if (itemModel.waybillNumber) {
+        CPNExpressCheckViewController *expressCheckVC = [[CPNExpressCheckViewController alloc] initWithExpressId:itemModel.waybillNumber];
+        expressCheckVC.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:expressCheckVC animated:YES];
+    }
 }
 
 

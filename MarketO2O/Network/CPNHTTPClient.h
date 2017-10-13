@@ -136,6 +136,25 @@
 - (void)requestShopInfoWithShopId:(NSString *)shopId
                     completeBlock:(void (^)(CPNShopInfoModel *shopInfo, CPNError *error))completeBlock;
 
+#pragma mark  获取商铺的电子合同
+/**
+ 获取商铺的电子合同
+ 
+ @param shopId 商铺的id
+ @param completeBlock 请求完成回调
+ */
+- (void)requestContractWithShopId:(NSString *)shopId
+                    completeBlock:(void (^)(NSString *ContractImageUrl, CPNError *error))completeBlock;
+
+#pragma mark 上传签名后的电子图片
+/**
+ @param image 上传的图片
+ @param completeBlock 请求完成回调
+ */
+- (void)requestUploadContractImage:(UIImage *)image
+                            shopId:(NSString *)shopId
+                     completeBlock:(void (^)(BOOL status, CPNError *error))completeBlock;
+
 #pragma mark - 领取优惠券接口
 /**
  领取优惠券接口

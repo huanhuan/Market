@@ -151,10 +151,16 @@ static NSString *addressIdentifier = @"addressIdentifier";
 {
     if (!_bottonView) {
         _bottonView = [[CPNGoodsPayMentBottonView alloc] initWithFrame:CGRectZero];
+        _bottonView.delegate = (id<CPNGoodsPayMentBottonDelegate>)self;
         [self.view addSubview:_bottonView];
     }
     return _bottonView;
 }
 
+#pragma mark CPNGoodsPayMentBottonDelegate
+- (void)confirmButtonClick
+{
+#warning 马上下单按钮
+}
 
 @end

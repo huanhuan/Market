@@ -37,7 +37,7 @@
     if (!self.webView)
     {
         [self initWKWebView];
-        self.url = [NSURL URLWithString:[NSString stringWithFormat:@"https://m.kuaidi100.com/index_all.html?type=yunda&postid=%@", self.expressId]];
+        self.url = [NSURL URLWithString:[NSString stringWithFormat:@"http://m.kuaidi100.com/index_all.html?postid=%@", self.expressId]];
         [self.webView loadRequest:[NSURLRequest requestWithURL:self.url cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:30]];
     }else
     {
@@ -66,7 +66,7 @@
     webView.opaque = NO;
     self.webView = webView;
     webView.scrollView.delegate = (id<UIScrollViewDelegate>)self;
-    [webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
+//    [webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
