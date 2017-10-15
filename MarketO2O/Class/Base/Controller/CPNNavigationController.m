@@ -18,7 +18,7 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     self.view.backgroundColor = CPNCommonContrllorBackgroundColor;
-    [self.navigationBar setTintColor:CPNCommonWhiteColor];
+    [self.navigationBar setTintColor:CPNCommonRedColor];
     self.delegate = self;
     if ([self respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
         self.interactivePopGestureRecognizer.delegate = self;

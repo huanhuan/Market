@@ -11,6 +11,7 @@
 @interface CPNHomePageSectionHeaderView ()
 
 @property (nonatomic, strong) UILabel   *titleLabel;
+@property (nonatomic, strong)UISearchBar *searchBar;
 
 @end
 

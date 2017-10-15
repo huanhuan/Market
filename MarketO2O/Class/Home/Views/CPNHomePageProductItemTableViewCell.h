@@ -17,6 +17,7 @@
 
 @property (nonatomic, strong) CPNHomePageProductItemModel *itemModel;
 
+- (void)hideBuyButton;
 /**
  返回cell行高
  

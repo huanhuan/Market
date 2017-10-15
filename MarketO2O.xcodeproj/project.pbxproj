@@ -20,7 +20,6 @@
 		23733E0C1F6B6F9900B8B183 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 23733E011F6B6F9900B8B183 /* ViewController+MASAdditions.m */; };
 		2376B1BE1F788F3C00FEE2A8 /* CPNGoodsPaymentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2376B1BD1F788F3C00FEE2A8 /* CPNGoodsPaymentCell.m */; };
 		2376B1C11F78914800FEE2A8 /* CPNGoodsPayMentBottonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2376B1C01F78914800FEE2A8 /* CPNGoodsPayMentBottonView.m */; };
-		2376B1C41F78F2D000FEE2A8 /* CPNUserAddressInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2376B1C31F78F2D000FEE2A8 /* CPNUserAddressInfoModel.m */; };
 		2376B1CB1F78FA9D00FEE2A8 /* CPNAddAdressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2376B1CA1F78FA9D00FEE2A8 /* CPNAddAdressViewController.m */; };
 		2376B1CE1F78FFB200FEE2A8 /* UIAutoScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2376B1CD1F78FFB200FEE2A8 /* UIAutoScrollView.m */; };
 		2376B1D11F791B7D00FEE2A8 /* UITextView+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2376B1D01F791B7D00FEE2A8 /* UITextView+Placeholder.m */; };
@@ -205,6 +204,10 @@
 		F3E8C0F81F77ABAD006D7C61 /* CPNAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E8C0F61F77ABAD006D7C61 /* CPNAboutViewController.m */; };
 		F3E8C0FF1F77ABD0006D7C61 /* CPNGoodsPaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E8C0FC1F77ABD0006D7C61 /* CPNGoodsPaymentViewController.m */; };
 		F3E8C1041F8EF9F3006D7C61 /* CPNExpressCheckViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E8C1031F8EF9F3006D7C61 /* CPNExpressCheckViewController.m */; };
+		F3EEBBF91F92FEDD00E434CD /* LWSearchResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3EEBBF61F92FEDD00E434CD /* LWSearchResultsController.m */; };
+		F3EEBBFA1F92FEDD00E434CD /* LWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3EEBBF81F92FEDD00E434CD /* LWViewController.m */; };
+		F3EEBBFD1F9309EB00E434CD /* UIImage+CPNUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F3EEBBFC1F9309EB00E434CD /* UIImage+CPNUtil.m */; };
+		F3EEBC011F93A81900E434CD /* CPNUserAddressInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3EEBC001F93A81900E434CD /* CPNUserAddressInfoModel.m */; };
 		F3FDE2B51F403455006590BE /* NSString+Jason.m in Sources */ = {isa = PBXBuildFile; fileRef = F3FDE2B41F403455006590BE /* NSString+Jason.m */; };
 /* End PBXBuildFile section */
 
@@ -239,8 +242,6 @@
 		2376B1BD1F788F3C00FEE2A8 /* CPNGoodsPaymentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPNGoodsPaymentCell.m; sourceTree = "<group>"; };
 		2376B1BF1F78914800FEE2A8 /* CPNGoodsPayMentBottonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPNGoodsPayMentBottonView.h; sourceTree = "<group>"; };
 		2376B1C01F78914800FEE2A8 /* CPNGoodsPayMentBottonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPNGoodsPayMentBottonView.m; sourceTree = "<group>"; };
-		2376B1C21F78F2D000FEE2A8 /* CPNUserAddressInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPNUserAddressInfoModel.h; path = ../../GoodsPayment/Models/CPNUserAddressInfoModel.h; sourceTree = "<group>"; };
-		2376B1C31F78F2D000FEE2A8 /* CPNUserAddressInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPNUserAddressInfoModel.m; path = ../../GoodsPayment/Models/CPNUserAddressInfoModel.m; sourceTree = "<group>"; };
 		2376B1C91F78FA9D00FEE2A8 /* CPNAddAdressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPNAddAdressViewController.h; sourceTree = "<group>"; };
 		2376B1CA1F78FA9D00FEE2A8 /* CPNAddAdressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPNAddAdressViewController.m; sourceTree = "<group>"; };
 		2376B1CC1F78FFB200FEE2A8 /* UIAutoScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIAutoScrollView.h; sourceTree = "<group>"; };
@@ -604,6 +605,14 @@
 		F3E8C0FC1F77ABD0006D7C61 /* CPNGoodsPaymentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPNGoodsPaymentViewController.m; sourceTree = "<group>"; };
 		F3E8C1021F8EF9F3006D7C61 /* CPNExpressCheckViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPNExpressCheckViewController.h; sourceTree = "<group>"; };
 		F3E8C1031F8EF9F3006D7C61 /* CPNExpressCheckViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPNExpressCheckViewController.m; sourceTree = "<group>"; };
+		F3EEBBF51F92FEDD00E434CD /* LWSearchResultsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWSearchResultsController.h; sourceTree = "<group>"; };
+		F3EEBBF61F92FEDD00E434CD /* LWSearchResultsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWSearchResultsController.m; sourceTree = "<group>"; };
+		F3EEBBF71F92FEDD00E434CD /* LWViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWViewController.h; sourceTree = "<group>"; };
+		F3EEBBF81F92FEDD00E434CD /* LWViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWViewController.m; sourceTree = "<group>"; };
+		F3EEBBFB1F9309EB00E434CD /* UIImage+CPNUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+CPNUtil.h"; sourceTree = "<group>"; };
+		F3EEBBFC1F9309EB00E434CD /* UIImage+CPNUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CPNUtil.m"; sourceTree = "<group>"; };
+		F3EEBBFF1F93A81900E434CD /* CPNUserAddressInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPNUserAddressInfoModel.h; sourceTree = "<group>"; };
+		F3EEBC001F93A81900E434CD /* CPNUserAddressInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPNUserAddressInfoModel.m; sourceTree = "<group>"; };
 		F3FDE2B31F403455006590BE /* NSString+Jason.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Jason.h"; sourceTree = "<group>"; };
 		F3FDE2B41F403455006590BE /* NSString+Jason.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Jason.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -696,8 +705,8 @@
 		2376B1C51F78FA8300FEE2A8 /* AddAdress */ = {
 			isa = PBXGroup;
 			children = (
+				F3EEBBFE1F93A81900E434CD /* Models */,
 				2376B1C61F78FA8300FEE2A8 /* Controller */,
-				2376B1C71F78FA8300FEE2A8 /* Models */,
 				2376B1C81F78FA8300FEE2A8 /* Views */,
 			);
 			path = AddAdress;
@@ -710,15 +719,6 @@
 				2376B1CA1F78FA9D00FEE2A8 /* CPNAddAdressViewController.m */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		2376B1C71F78FA8300FEE2A8 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				2376B1C21F78F2D000FEE2A8 /* CPNUserAddressInfoModel.h */,
-				2376B1C31F78F2D000FEE2A8 /* CPNUserAddressInfoModel.m */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		2376B1C81F78FA8300FEE2A8 /* Views */ = {
@@ -844,6 +844,7 @@
 		BF6F886E1F124AB4006D4187 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				F3EEBBF41F92FEDD00E434CD /* Search */,
 				23E703871F8F650D00D2E698 /* Contract */,
 				F3E8C1011F8EF9DE006D7C61 /* expressCheck */,
 				2376B1C51F78FA8300FEE2A8 /* AddAdress */,
@@ -1247,6 +1248,8 @@
 				BF6F88FB1F124AB4006D4187 /* CPNPinYinLetterIndex.m */,
 				F3FDE2B31F403455006590BE /* NSString+Jason.h */,
 				F3FDE2B41F403455006590BE /* NSString+Jason.m */,
+				F3EEBBFB1F9309EB00E434CD /* UIImage+CPNUtil.h */,
+				F3EEBBFC1F9309EB00E434CD /* UIImage+CPNUtil.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1812,6 +1815,26 @@
 			path = expressCheck;
 			sourceTree = "<group>";
 		};
+		F3EEBBF41F92FEDD00E434CD /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				F3EEBBF51F92FEDD00E434CD /* LWSearchResultsController.h */,
+				F3EEBBF61F92FEDD00E434CD /* LWSearchResultsController.m */,
+				F3EEBBF71F92FEDD00E434CD /* LWViewController.h */,
+				F3EEBBF81F92FEDD00E434CD /* LWViewController.m */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		F3EEBBFE1F93A81900E434CD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F3EEBBFF1F93A81900E434CD /* CPNUserAddressInfoModel.h */,
+				F3EEBC001F93A81900E434CD /* CPNUserAddressInfoModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1922,6 +1945,7 @@
 				BF6F89AF1F124AB5006D4187 /* CPNUserCenterViewController.m in Sources */,
 				BF6F89DE1F124AB5006D4187 /* MJRefreshLegendHeader.m in Sources */,
 				BF6F898A1F124AB5006D4187 /* CPNNavigationController.m in Sources */,
+				F3EEBBF91F92FEDD00E434CD /* LWSearchResultsController.m in Sources */,
 				F36EB8501F6E5B2000DD251A /* CPNShopingCartItemCell.m in Sources */,
 				2376B1E41F79227100FEE2A8 /* STConst.m in Sources */,
 				BF6F89E41F124AB5006D4187 /* SDImageCache.m in Sources */,
@@ -1945,6 +1969,7 @@
 				BF6F89DA1F124AB5006D4187 /* MJRefreshGifFooter.m in Sources */,
 				BF6F89D81F124AB5006D4187 /* MJRefreshConst.m in Sources */,
 				F3E8C0CC1F6E6488006D7C61 /* HJCAjustNumButton.m in Sources */,
+				F3EEBBFD1F9309EB00E434CD /* UIImage+CPNUtil.m in Sources */,
 				2376B2011F79F00800FEE2A8 /* UITableView+FDTemplateLayoutCell.m in Sources */,
 				F34DBF801F57AF9B0091C424 /* TAAnimatedDotView.m in Sources */,
 				BF6F89B51F124AB5006D4187 /* CPNError.m in Sources */,
@@ -1968,6 +1993,7 @@
 				F34DBF841F57AF9B0091C424 /* SDCycleScrollView.m in Sources */,
 				BF6F89ED1F124AB5006D4187 /* UIImage+MultiFormat.m in Sources */,
 				F34DBF7F1F57AF9B0091C424 /* TAAbstractDotView.m in Sources */,
+				F3EEBC011F93A81900E434CD /* CPNUserAddressInfoModel.m in Sources */,
 				BF6F89B81F124AB5006D4187 /* CPNRequest.m in Sources */,
 				BF6F89E01F124AB5006D4187 /* UIScrollView+MJRefresh.m in Sources */,
 				BF6F89F21F124AB5006D4187 /* SlideSwitchView.m in Sources */,
@@ -1976,6 +2002,7 @@
 				23733E0C1F6B6F9900B8B183 /* ViewController+MASAdditions.m in Sources */,
 				BF6F89B21F124AB5006D4187 /* CPNUserCenterItemTableViewCell.m in Sources */,
 				F34DBF851F57AF9B0091C424 /* UIView+SDExtension.m in Sources */,
+				F3EEBBFA1F92FEDD00E434CD /* LWViewController.m in Sources */,
 				BF6F89891F124AB5006D4187 /* CPNBaseViewController.m in Sources */,
 				BF9D89A71F2C8EF4005BEAF8 /* CPNDataBase.m in Sources */,
 				BF9041441F17A0A200728ADC /* CPNExchangeProductAlertView.m in Sources */,
@@ -2046,7 +2073,6 @@
 				BF6F898B1F124AB5006D4187 /* CPNTabBarViewController.m in Sources */,
 				BF6F89BC1F124AB5006D4187 /* main.m in Sources */,
 				BF6F89E51F124AB5006D4187 /* SDWebImageCompat.m in Sources */,
-				2376B1C41F78F2D000FEE2A8 /* CPNUserAddressInfoModel.m in Sources */,
 				BF6F89921F124AB5006D4187 /* CPNCouponListCouponItemModel.m in Sources */,
 				BF6F89D21F124AB5006D4187 /* NSObject+MJCoding.m in Sources */,
 				F392B9FB1F5BEF7500D2B64A /* CPNSignatureNameViewController.m in Sources */,

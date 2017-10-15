@@ -115,4 +115,11 @@ STATIC_STRING(API_URL)                          @"http://112.74.56.142";
  @return
  */
 #define PATH_CONTRACT_IMAGE                     @"/coupons/v1/contract/getContract.do"
+
+/**
+ 获取搜索商品
+ 
+ @return
+ */
+#define PATH_SEARCH_PRODUCT                    @"/coupons/v1/goodsInfo/getGoodsByName.do"
 #endif

@@ -130,11 +130,12 @@
 - (UIButton *)confirmButton
 {
     if (!_confirmButton) {
-        _confirmButton = [[UIButton alloc] initWithFrame:CGRectMake(0, self.view.height - 104, MAIN_SCREEN_WIDTH, 40)];
+        _confirmButton = [[UIButton alloc] initWithFrame:CGRectMake(10, self.view.height - 50, MAIN_SCREEN_WIDTH - 20, 40)];
         [_confirmButton setBackgroundColor:CPNCommonLightRedColor];
         [_confirmButton.titleLabel setFont:CPNCommonFontFifteenSize];
         [_confirmButton setTitle:@"保存地址" forState:UIControlStateNormal];
         [_confirmButton setTitleColor:CPNCommonWhiteColor forState:UIControlStateNormal];
+        _confirmButton.layer.cornerRadius = 10;
         [_confirmButton addTarget:self action:@selector(confirmButtonClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:_confirmButton];
     }

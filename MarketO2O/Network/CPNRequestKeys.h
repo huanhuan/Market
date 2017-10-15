@@ -45,5 +45,8 @@
 //
 #define PARAM_KEY_SHOP_ID                   @"shopId"
 
+//搜索
+#define PARAM_KEY_SEARCH_KEY                @"goodsName"
+
 
 #endif /* CPNRequestKeys_h */

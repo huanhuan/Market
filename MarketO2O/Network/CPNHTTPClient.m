@@ -147,6 +147,41 @@ static CPNHTTPClient * __clientInstance = NULL;
                              isNeedShowLoading:isNeedLoading];
 }
 
+/**
+ 请求搜索结果
+ @param keyString 关键字
+ @param completeBlock 请求完成回调
+ */
+- (void)requestSearchProductWithKeyString:(NSString *)keyString
+                            completeBlock:(void (^)(NSArray *searchProductList, CPNError *error))completeBlock
+{
+    CPNRequest *request = [[CPNRequest alloc] init];
+    [request setString:keyString forKey:PARAM_KEY_SEARCH_KEY];
+    
+    [request setRequestPath:PATH_SEARCH_PRODUCT];
+    [request setRequestMethod:CPN_REQUEST_METHOD_GET];
+    
+    CPNHTTPCompleteBlock finishBlock = ^(CPNResponse *response, CPNError *error) {
+        if (error) {
+            completeBlock(nil,error);
+        }else{
+            if (response.respBody && [response.respBody isKindOfClass:[NSArray class]]) {
+                NSArray *productArray = [CPNHomePageProductItemModel mj_objectArrayWithKeyValuesArray:response.respBody];
+                completeBlock(productArray,nil);
+            }else{
+                CPNError *error = [[CPNError alloc] init];
+                error.errorCode = CPNErrorTypeDataParaseError;
+                error.errorMessage = CPNErrorMessageDataParaseError;
+                completeBlock(nil,error);
+            }
+        }
+    };
+    
+    [[CPNHTTPAgent instanceAgent] startRequest:request
+                                      response:finishBlock
+                             isNeedShowLoading:YES];
+}
+
 #pragma mark -请求用户详细信息---主要是积分
 - (void)requestUserInfoWithUnionId:(CPNLoginUserInfoModel *)userLoginInfo
                      completeBlock:(void(^)(CPNLoginUserInfoModel *infoModel, CPNError *error))completeBlock

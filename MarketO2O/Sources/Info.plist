@@ -46,7 +46,11 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>商场需要您的同意才能读取媒体资料库</string>
 	<key>NSLocationAlwaysUsageDescription</key>
+	<string>商城需要您的同意,才能始终访问位置</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>商城需要您的同意,才能始终访问位置</string>
 	<key>UIBackgroundModes</key>
 	<array>

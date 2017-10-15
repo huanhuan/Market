@@ -64,7 +64,10 @@
     return self;
 }
 
-
+- (void)hideBuyButton
+{
+    [self.buyButton setHidden:YES];
+}
 - (void)dealloc{
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }

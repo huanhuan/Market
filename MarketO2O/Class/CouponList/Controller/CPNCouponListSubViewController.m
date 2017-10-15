@@ -101,19 +101,19 @@ static NSString *cellIdentifier = @"cellIdentifier";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     CPNCouponListCouponItemModel *couponModel = self.dataSource[indexPath.row];
-    [[CPNHTTPClient instanceClient] requestContractWithShopId:couponModel.shopId completeBlock:^(NSString *ContractImageUrl, CPNError *error) {
-        if (ContractImageUrl) {
-            CPNContractSignViewController *VC = [[CPNContractSignViewController alloc] initWithContractImageUrl:ContractImageUrl];
-            VC.hidesBottomBarWhenPushed = YES;
-            AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-//            self.navigationController pushViewController:<#(nonnull UIViewController *)#> animated:<#(BOOL)#>
-            [((UINavigationController*)(delegate.tabBarController.selectedViewController)) pushViewController:VC animated:YES];
-            [self.navigationController pushViewController:VC animated:YES];
-        }
-    }];
-//    if (couponModel.latitude && couponModel.longitude) {
-//        [[CPNMapNavManager sharedCPNMapNavManager] mapNavTargetPointWithLatitude:[couponModel.latitude floatValue] longitude:[couponModel.longitude floatValue] name:couponModel.shopName];
-//    }
+//    [[CPNHTTPClient instanceClient] requestContractWithShopId:couponModel.shopId completeBlock:^(NSString *ContractImageUrl, CPNError *error) {
+//        if (ContractImageUrl) {
+//            CPNContractSignViewController *VC = [[CPNContractSignViewController alloc] initWithContractImageUrl:ContractImageUrl];
+//            VC.hidesBottomBarWhenPushed = YES;
+//            AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+////            self.navigationController pushViewController:<#(nonnull UIViewController *)#> animated:<#(BOOL)#>
+//            [((UINavigationController*)(delegate.tabBarController.selectedViewController)) pushViewController:VC animated:YES];
+//            [self.navigationController pushViewController:VC animated:YES];
+//        }
+//    }];
+    if (couponModel.latitude && couponModel.longitude) {
+        [[CPNMapNavManager sharedCPNMapNavManager] mapNavTargetPointWithLatitude:[couponModel.latitude floatValue] longitude:[couponModel.longitude floatValue] name:couponModel.shopName];
+    }
 }
 #pragma mark - netWorkRequest
 

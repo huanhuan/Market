@@ -53,6 +53,13 @@
                             isNeedLoading:(BOOL)isNeedLoading
                             completeBlock:(void (^)(NSArray *productList, CPNError *error))completeBlock;
 
+/**
+ 请求搜索结果
+ @param keyString 关键字
+ @param completeBlock 请求完成回调
+ */
+- (void)requestSearchProductWithKeyString:(NSString *)keyString
+                            completeBlock:(void (^)(NSArray *searchProductList, CPNError *error))completeBlock;
 
 #pragma mark - 请求商品类别列表接口
 /**

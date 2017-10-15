@@ -21,6 +21,8 @@
 
 #import "CPNShopingCartManager.h"
 
+#import "LWViewController.h"
+
 static NSString *cellIdentifier = @"cellIdentifier";
 static NSString *headerIdentifier = @"headerIdentifer";
 
@@ -212,11 +214,12 @@ static NSString *headerIdentifier = @"headerIdentifer";
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (self.productArray.count > indexPath.row) {
         CPNHomePageProductItemModel *itemModel = self.productArray[indexPath.row];
-        CPNProductDetailViewController *productDetail = [[CPNProductDetailViewController alloc] initWithProductModel:itemModel];
+//        CPNProductDetailViewController *productDetail = [[CPNProductDetailViewController alloc] initWithProductModel:itemModel];
+        LWViewController *productDetail = [[LWViewController alloc] init];
         productDetail.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:productDetail animated:YES];
 
-        [[CPNShopingCartManager sharedCPNShopingCartManager] addToShopingCart:itemModel];
+//        [[CPNShopingCartManager sharedCPNShopingCartManager] addToShopingCart:itemModel];
         //39.918058 longitude:116.397026] name:@"故宫"
 //        CPNSignatureNameViewController *vc = [CPNSignatureNameViewController new];
 //        vc.hidesBottomBarWhenPushed = YES;
