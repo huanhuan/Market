@@ -21,5 +21,8 @@
 @property (nonatomic, copy) NSString    *star;
 @property (nonatomic, assign) NSInteger status;
 
+//详情图片
+@property (nonatomic, strong)NSArray<NSString *> *detailImageUrls;
+
 
 @end

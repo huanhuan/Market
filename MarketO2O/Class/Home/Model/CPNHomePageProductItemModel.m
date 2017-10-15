@@ -18,7 +18,19 @@
 
 - (void)mj_keyValuesDidFinishConvertingToObject{
     NSString *domain = [CPNHTTPAgent instanceAgent].baseURL.absoluteString;
-    self.imageUrl = [NSString stringWithFormat:@"%@/coupons/%@",domain,self.imageUrl];
+    NSArray *substringArray = [self.imageUrl componentsSeparatedByString:@";"];
+    if (substringArray.count > 0) {
+        self.imageUrl = [NSString stringWithFormat:@"%@/coupons/%@",domain,substringArray[0]];
+        NSMutableArray *tempArray = [NSMutableArray arrayWithArray:substringArray];
+        [tempArray removeObjectAtIndex:0];
+        NSMutableArray *domainTempArray = [NSMutableArray arrayWithCapacity:tempArray.count];
+        [tempArray enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            obj = [NSString stringWithFormat:@"%@/coupons/%@",domain,obj];
+            [domainTempArray addObject:obj];
+        }];
+        self.detailImageUrls = domainTempArray;
+
+    }
 }
 
 @end

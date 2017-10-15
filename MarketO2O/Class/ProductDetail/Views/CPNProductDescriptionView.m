@@ -8,11 +8,14 @@
 
 #import "CPNProductDescriptionView.h"
 #import "CPNHomePageProductItemModel.h"
+#import "ShowImagesFullScreen.h"
 
 @interface CPNProductDescriptionView ()
 
 @property (nonatomic, strong) UILabel   *tipLabel;
 @property (nonatomic, strong) UILabel   *descLabel;
+
+@property (nonatomic, strong)NSMutableArray<UIImageView *> *detailImageViews;
 
 @end
 
@@ -22,6 +25,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = CPNCommonWhiteColor;
+        self.detailImageViews = [NSMutableArray new];
     }
     return self;
 }
@@ -76,11 +80,28 @@
  */
 - (void)setProductModel:(CPNHomePageProductItemModel *)productModel{
     _productModel = productModel;
-    self.descLabel.text = productModel.desc;
-    self.descLabel.width = self.width - self.descLabel.left * 2;
-    [self.descLabel sizeToFit];
-    
-    self.height = self.descLabel.bottom + self.tipLabel.top;
+//    self.descLabel.text = productModel.desc;
+//    self.descLabel.width = self.width - self.descLabel.left * 2;
+//    [self.descLabel sizeToFit];
+    UIView __block *topView = self.tipLabel;
+    [productModel.detailImageUrls enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        UIImageView *tempImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.width, self.width)];
+        [self addSubview:tempImageView];
+        tempImageView.top = topView.bottom + 15;
+        topView = tempImageView;
+        [self.detailImageViews addObject:tempImageView];
+        tempImageView.tag = idx;
+        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
+        [tempImageView setUserInteractionEnabled:YES];
+        [tempImageView addGestureRecognizer:tapGesture];
+        [tempImageView sd_setImageWithURL:[NSURL URLWithString:obj] placeholderImage:[UIImage imageNamed:@"图片默认图"]];
+    }];
+    self.height = topView.bottom + self.tipLabel.top;
+}
+
+- (void)tap:(UITapGestureRecognizer *)tap
+{
+    [[ShowImagesFullScreen shareShowImagesFullScreenManager] showImages:self.detailImageViews currentShowImageIndex:tap.view.tag];
 }
 
 @end
