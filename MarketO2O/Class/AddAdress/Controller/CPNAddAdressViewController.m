@@ -37,7 +37,6 @@
         make.top.and.bottom.and.left.and.right.equalTo(self.view);
     }];
     [self initViews];
-    [self.view addSubview:self.confirmButton];
     UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(keyboardHide:)];
     //设置成NO表示当前控件响应后会传播到其他控件上，默认为YES。
     tapGestureRecognizer.cancelsTouchesInView = NO;
@@ -112,6 +111,7 @@
     if (self.addressInfoModel) {
         self.title = @"修改地址";
     }
+    [self confirmButton];
 }
 
 - (void)changeAddress:(CPNUserAddressInfoModel *)addressInfoModel
@@ -130,7 +130,7 @@
 - (UIButton *)confirmButton
 {
     if (!_confirmButton) {
-        _confirmButton = [[UIButton alloc] initWithFrame:CGRectMake(10, self.view.height - 50, MAIN_SCREEN_WIDTH - 20, 40)];
+        _confirmButton = [[UIButton alloc] initWithFrame:CGRectMake(10, self.view.height - 100, MAIN_SCREEN_WIDTH - 20, 40)];
         [_confirmButton setBackgroundColor:CPNCommonLightRedColor];
         [_confirmButton.titleLabel setFont:CPNCommonFontFifteenSize];
         [_confirmButton setTitle:@"保存地址" forState:UIControlStateNormal];
@@ -138,6 +138,13 @@
         _confirmButton.layer.cornerRadius = 10;
         [_confirmButton addTarget:self action:@selector(confirmButtonClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:_confirmButton];
+        [_confirmButton mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self.view).mas_offset(10);
+            make.right.equalTo(self.view).mas_offset(-10);
+            make.bottom.equalTo(self.view).mas_offset(-10);
+            make.height.mas_equalTo(40);
+            
+        }];
     }
     return _confirmButton;
 }

@@ -78,6 +78,12 @@
 
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    self.searchController.active = YES;
+}
+
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
     self.tableView.frame = self.view.bounds;
@@ -101,6 +107,7 @@
     [UIView animateWithDuration:0.005 animations:^{ // 解决卡顿
         self.showPromtView.frame = CGRectMake(x, y, w, h);
     }];
+    [self.searchController.searchBar becomeFirstResponder];
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {

@@ -682,13 +682,6 @@
 			path = ../Sources/Masonry;
 			sourceTree = "<group>";
 		};
-		2376B1BA1F788F2B00FEE2A8 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		2376B1BB1F788F2B00FEE2A8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -1790,7 +1783,6 @@
 		F3E8C0F91F77ABD0006D7C61 /* GoodsPayment */ = {
 			isa = PBXGroup;
 			children = (
-				2376B1BA1F788F2B00FEE2A8 /* Models */,
 				2376B1BB1F788F2B00FEE2A8 /* Views */,
 				F3E8C0FA1F77ABD0006D7C61 /* Controller */,
 			);

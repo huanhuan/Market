@@ -79,7 +79,7 @@
     if (userAddressInfoModel) {
         _userAddressInfoModel = userAddressInfoModel;
         [self.name setText:[NSString stringWithFormat:@"收货人：%@", userAddressInfoModel.name]];
-        [self.telePhone setText:[NSString stringWithFormat:@"联系方式：：%@", userAddressInfoModel.telephoneNumber]];
+        [self.telePhone setText:[NSString stringWithFormat:@"联系方式：%@", userAddressInfoModel.telephoneNumber]];
         [self.address setText:[NSString stringWithFormat:@"收货地址：%@", [NSString stringWithFormat:@"%@%@",userAddressInfoModel.city, userAddressInfoModel.address]]];
     }
 }

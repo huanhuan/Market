@@ -15,7 +15,7 @@
 #import "CPNProductDetailViewController.h"
 #import "CPNAlertView.h"
 #import "CPNTabBarViewController.h"
-
+#import "UIImage+CPNUtil.h"
 #import "CPNMapNavManager.h"
 #import "CPNSignatureNameViewController.h"
 
@@ -69,6 +69,19 @@ static NSString *headerIdentifier = @"headerIdentifer";
     self.currentPage = 0;
     [self requestGoodsListIsHeaderRefresh:NO isFooterRefrsh:NO];
     self.navigationItem.leftBarButtonItem = nil;
+    
+    //显示搜索框
+    UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(10,30, 320,40)];
+    searchBar.placeholder =@"搜索商品"; //和textfield一样有placeholder属性
+    searchBar.delegate = (id<UISearchBarDelegate>)self;
+    [searchBar setBackgroundImage:[UIImage createImageWithColor:CPNCommonRedColor] forBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault]; // 替换系统的背景图片
+    [_headerView addSubview:searchBar];
+    [searchBar mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(_topImageView).offset(10);
+        make.right.equalTo(_topImageView).offset(-10);
+        make.top.equalTo(_topImageView).offset(30);
+        make.height.equalTo(@40);
+    }];
 }
 
 - (void)viewWillLayoutSubviews{
@@ -129,6 +142,15 @@ static NSString *headerIdentifier = @"headerIdentifer";
         [self.headerView addSubview:_topImageView];
     }
     return _topImageView;
+}
+
+#pragma mark UISearchBarDelegate
+- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar
+{
+    LWViewController *productDetail = [[LWViewController alloc] init];
+    productDetail.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:productDetail animated:YES];
+    return NO;
 }
 
 
@@ -214,8 +236,8 @@ static NSString *headerIdentifier = @"headerIdentifer";
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (self.productArray.count > indexPath.row) {
         CPNHomePageProductItemModel *itemModel = self.productArray[indexPath.row];
-//        CPNProductDetailViewController *productDetail = [[CPNProductDetailViewController alloc] initWithProductModel:itemModel];
-        LWViewController *productDetail = [[LWViewController alloc] init];
+        CPNProductDetailViewController *productDetail = [[CPNProductDetailViewController alloc] initWithProductModel:itemModel];
+//        LWViewController *productDetail = [[LWViewController alloc] init];
         productDetail.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:productDetail animated:YES];
 

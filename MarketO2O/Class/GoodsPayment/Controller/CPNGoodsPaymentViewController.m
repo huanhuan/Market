@@ -89,7 +89,7 @@ static NSString *addressIdentifier = @"addressIdentifier";
     
     if (indexPath.row == 0) {
         WeakSelf;
-        return [self.tableView fd_heightForCellWithIdentifier:addressIdentifier cacheByKey:self.userAddressInfoModel.name  configuration:^(UITableViewCell *cell)
+        return [self.tableView fd_heightForCellWithIdentifier:addressIdentifier cacheByIndexPath:indexPath  configuration:^(UITableViewCell *cell)
                 {
                     [(CPNAddressTableViewCell *)cell setUserAddressInfoModel:weakSelf.userAddressInfoModel];
                 }];
