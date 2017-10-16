@@ -241,7 +241,7 @@ static NSString *headerIdentifier = @"headerIdentifer";
         productDetail.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:productDetail animated:YES];
 
-//        [[CPNShopingCartManager sharedCPNShopingCartManager] addToShopingCart:itemModel];
+        [[CPNShopingCartManager sharedCPNShopingCartManager] addToShopingCart:itemModel];
         //39.918058 longitude:116.397026] name:@"故宫"
 //        CPNSignatureNameViewController *vc = [CPNSignatureNameViewController new];
 //        vc.hidesBottomBarWhenPushed = YES;

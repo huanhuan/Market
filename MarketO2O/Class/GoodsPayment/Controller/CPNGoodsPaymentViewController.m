@@ -13,12 +13,13 @@
 #import "CPNAddAdressViewController.h"
 #import "CPNAddressTableViewCell.h"
 #import "UITableView+FDTemplateLayoutCell.h"
-
+#import "CPNShopingCartManager.h"
 @interface CPNGoodsPaymentViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView                   *tableView;
 @property (nonatomic, strong) CPNGoodsPayMentBottonView     *bottonView;
 @property (nonatomic, strong) CPNUserAddressInfoModel       *userAddressInfoModel;
+@property (nonatomic, assign) float needMoney;
 @end
 
 static NSString *cellIdentifier = @"cellIdentifier";
@@ -56,6 +57,7 @@ static NSString *addressIdentifier = @"addressIdentifier";
         needMoney = (goodsNeedPoint - totalPoint)/10.0f;
         payPoint = totalPoint;
     }
+    self.needMoney = needMoney;
     [self.bottonView update:payPoint remainPoints:remainPoint needPayMoney:needMoney];
     
 //    [self.bottonView update:goodsNeedPoint goodsNeedPoints:goodsNeedPoint needPayMoney:needMoney];
@@ -160,7 +162,26 @@ static NSString *addressIdentifier = @"addressIdentifier";
 #pragma mark CPNGoodsPayMentBottonDelegate
 - (void)confirmButtonClick
 {
-#warning 马上下单按钮
+    if (self.needMoney > 0) {
+#warning 微信支付
+    }else
+    {
+        
+        NSString *goodsId = nil;
+        NSMutableDictionary __block *dic = [NSMutableDictionary new];
+        [self.selectedProductionArray enumerateObjectsUsingBlock:^(CPNShopingCartItemModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            [dic setObject:[NSString stringWithFormat:@"%ld", obj.count] forKey:obj.id];
+        }];
+        goodsId = [dic mj_JSONString];
+        [[CPNHTTPClient instanceClient] requestBuyProductWithProductId:goodsId name:self.userAddressInfoModel.name phone:self.userAddressInfoModel.telephoneNumber address:self.userAddressInfoModel.address completeBlock:^(CPNResponse *response, CPNError *error) {
+            if (!error) {
+                [self.selectedProductionArray enumerateObjectsUsingBlock:^(CPNShopingCartItemModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                    [[CPNShopingCartManager sharedCPNShopingCartManager] deleteShopingCart:obj];;
+                }];
+                
+            }
+        }];
+    }
 }
 
 @end
