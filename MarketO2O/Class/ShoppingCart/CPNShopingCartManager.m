@@ -10,6 +10,7 @@
 #import "CPNShopingCartItemModel.h"
 #import "CPNHomePageProductItemModel.h"
 #import "CPNDataBase.h"
+#import "CPNShoppingCartViewController.h"
 
 @implementation CPNShopingCartManager
 
@@ -41,6 +42,15 @@ CPNSingletonM(CPNShopingCartManager);
 {
     [[CPNDataBase defaultDataBase] deleteProductionFromShopCart:productionItem];
 
+}
+
+- (void)gotoShopingCartVC
+{
+    AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    CPNShoppingCartViewController *vc = [[CPNShoppingCartViewController alloc] init];
+    vc.title = @"购物车";
+    vc.hidesBottomBarWhenPushed = YES;
+    [delegate.navigationVC pushViewController:vc animated:YES];
 }
 
 @end

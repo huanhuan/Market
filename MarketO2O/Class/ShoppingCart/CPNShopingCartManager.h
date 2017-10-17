@@ -21,4 +21,6 @@ CPNSingletonH(CPNShopingCartManager);
 
 - (void)deleteShopingCart:(CPNShopingCartItemModel *)productionItem;
 
+- (void)gotoShopingCartVC;
+
 @end

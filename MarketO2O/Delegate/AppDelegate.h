@@ -13,7 +13,7 @@
 @class CPNTabBarViewController;
 @class CPNLoginUserInfoModel;
 @class CPNConfigSettingModel;
-
+@class CPNNavigationController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -31,6 +31,10 @@
  */
 @property (strong, nonatomic) CPNLoginUserInfoModel     *loginUserModel;
 
+/**
+ 当前选中的navigationVC
+ */
+@property (nonatomic, strong)CPNNavigationController *navigationVC;
 
 @end
 

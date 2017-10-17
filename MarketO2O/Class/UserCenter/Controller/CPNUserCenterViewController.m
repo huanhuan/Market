@@ -173,6 +173,11 @@ static NSString *cellIdentifer = @"cellIdentifier";
                     [self.navigationController pushViewController:aboutVC animated:YES];
                 }
                     break;
+                case 2:
+                {
+#warning 电子合同
+                }
+                    break;
                 default:
                     break;
             }

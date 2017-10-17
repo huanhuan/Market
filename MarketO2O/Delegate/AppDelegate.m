@@ -143,6 +143,10 @@ const static NSString *APIKey = @"96c97d590c170946201d94d7b74991c7";
     return _tabBarController;
 }
 
+- (CPNNavigationController *)navigationVC
+{
+    return (CPNNavigationController*)([(UITabBarController *)self.tabBarController selectedViewController]);
+}
 
 
 /**

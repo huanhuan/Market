@@ -13,13 +13,24 @@
 #import "CPNProductStarView.h"
 #import "CPNProductDescriptionView.h"
 #import "SDCycleScrollView.h"
-
+#import "CPNProductionDetailBottonView.h"
+#import "CPNShopingCartManager.h"
+#import "CPNGoodsPaymentViewController.h"
+#import "CPNShopingCartItemModel.h"
+#import "CPNShoppingCartViewController.h"
+#import "CPNGoodsPaymentManager.h"
 @interface CPNProductDetailViewController ()
 
 /**
  商品详情页滚动背景
  */
 @property (nonatomic, strong) UIScrollView                  *scrollView;
+
+/**
+ 底部操作View
+ */
+@property (nonatomic, strong)CPNProductionDetailBottonView *bottomView;
+
 /**
  商品图片显示
  */
@@ -62,8 +73,8 @@
     self.productImageView.hidden =
     self.productInfoView.hidden =
     self.productStarView.hidden =
-    self.productDescView.hidden = NO;
-//    [self requestproductDetailInfo];
+    self.productDescView.hidden =
+    self.bottomView.hidden = NO;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -76,7 +87,51 @@
     self.scrollView.contentSize = CGSizeMake(self.scrollView.width, MAX(self.scrollView.height + 1, self.productDescView.bottom + 10));
 }
 
+#pragma mark productionDetailBottomDelegate
+- (void)addShopCar
+{
+    if (self.productModel) {
+        [[CPNShopingCartManager sharedCPNShopingCartManager] addToShopingCart:self.productModel];
+    }
+    [SVProgressHUD showInfoWithStatus:@"加入购物车成功！"];
+}
+- (void)gotoShopCar
+{
+    [[CPNShopingCartManager sharedCPNShopingCartManager] gotoShopingCartVC];
+}
+- (void)buyNow
+{
+    CPNShopingCartItemModel *model = [CPNShopingCartItemModel new];
+    model.count = 1;
+    model.id = self.productModel.id;
+    model.name = self.productModel.name;
+    model.desc = self.productModel.desc;
+    model.imageUrl = self.productModel.imageUrl;
+    model.points = self.productModel.points;
+    [[CPNGoodsPaymentManager sharedCPNGoodsPaymentManager] gotoGoodsPaymentVC:@[model]];
+    
+}
+
+
 #pragma mark - loadView
+/**
+ 底部操作view
+ 
+ @return CPNProductionDetailBottonView
+ */
+- (CPNProductionDetailBottonView *)bottomView{
+    if (!_bottomView) {
+        _bottomView = [[CPNProductionDetailBottonView alloc] init];
+        _bottomView.backgroundColor = [UIColor clearColor];
+        [self.view addSubview:_bottomView];
+        [_bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.and.right.and.bottom.equalTo(self.view);
+            make.height.equalTo(@60);
+        }];
+        _bottomView.delegate = (id<productionDetailBottomDelegate>)self;
+    }
+    return _bottomView;
+}
 
 /**
  商品详情滚动背景
@@ -89,6 +144,11 @@
         _scrollView.backgroundColor = [UIColor clearColor];
         _scrollView.showsVerticalScrollIndicator = NO;
         [self.view addSubview:_scrollView];
+        [_scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.and.right.and.top.equalTo(self.view);
+            make.bottom.equalTo(self.bottomView.mas_top);
+            
+        }];
     }
     return _scrollView;
 }
