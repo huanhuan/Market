@@ -125,6 +125,9 @@ static NSString *cellIdentifier = @"cellIdentifier";
         CPNExpressCheckViewController *expressCheckVC = [[CPNExpressCheckViewController alloc] initWithExpressId:itemModel.waybillNumber];
         expressCheckVC.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:expressCheckVC animated:YES];
+    }else
+    {
+        [SVProgressHUD showInfoWithStatus:@"暂未发货！"];
     }
 }
 

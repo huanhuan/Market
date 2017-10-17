@@ -96,7 +96,22 @@
 -(void)compose:(UIImage *)signatureNameImage
 {
     if (signatureNameImage) {
-        UIImage *resultImage = [self addImage:signatureNameImage toImage:self.contractImage];
+        
+        CGImageRef imgRef2 = signatureNameImage.CGImage;
+        CGFloat w2 = CGImageGetWidth(imgRef2);
+        CGFloat h2 = CGImageGetHeight(imgRef2);
+
+        //以1.png的图大小为画布创建上下文
+        CGFloat width = 1080/4.0;
+        CGFloat height = width/w2*h2;
+        UIGraphicsBeginImageContext(CGSizeMake(width, height));
+        [signatureNameImage drawInRect:CGRectMake(0, 0, width, height)];//先把1.png 画到上下文中
+        UIImage *signName = UIGraphicsGetImageFromCurrentImageContext();//从当前上下文中获得最终图片
+        UIGraphicsEndImageContext();//关闭上下文
+        
+        //414
+        
+        UIImage *resultImage = [self addImage:signName toImage:self.contractImage];
         [self.contractImageView setImage:resultImage];
         self.resultImage = resultImage;
         _confirmButton.enabled = YES;
@@ -105,7 +120,7 @@
 
 - (void)confirmButtonClick:(id)sender
 {
-    [[CPNHTTPClient instanceClient] requestUploadContractImage:self.contractImage shopId:[NSString stringWithFormat:@"%ld", self.shopId] completeBlock:^(BOOL status, CPNError *error) {
+    [[CPNHTTPClient instanceClient] requestUploadContractImage:self.resultImage shopId:[NSString stringWithFormat:@"%ld", self.shopId] completeBlock:^(BOOL status, CPNError *error) {
         if (status && !error) {
             [SVProgressHUD showInfoWithStatus:@"上传成功！"];
             [self.navigationController popToRootViewControllerAnimated:YES];
@@ -125,7 +140,7 @@
     //以1.png的图大小为画布创建上下文
     UIGraphicsBeginImageContext(CGSizeMake(w2, h2));
     [image2 drawInRect:CGRectMake(0, 0, w2, h2)];//先把1.png 画到上下文中
-    [image1 drawInRect:CGRectMake(w2 - image1.size.width, h2 - image1.size.height, image1.size.width, image1.size.height)];//再把小图放在上下文中
+    [image1 drawInRect:CGRectMake(w2 - image1.size.width, h2 - image1.size.height - 50, image1.size.width, image1.size.height)];//再把小图放在上下文中
     UIImage *resultImg = UIGraphicsGetImageFromCurrentImageContext();//从当前上下文中获得最终图片
     UIGraphicsEndImageContext();//关闭上下文
     

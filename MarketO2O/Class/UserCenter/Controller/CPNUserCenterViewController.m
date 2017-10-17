@@ -43,6 +43,15 @@ static NSString *cellIdentifer = @"cellIdentifier";
 {
     [super viewWillAppear:animated];
     [self.tableHeaderView refreshDataView];
+    AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    if (delegate.loginUserModel) {
+        [[CPNHTTPClient instanceClient] requestUserInfoWithUnionId:delegate.loginUserModel completeBlock:^(CPNLoginUserInfoModel *infoModel, CPNError *error) {
+            if (!error && infoModel) {
+                delegate.loginUserModel = infoModel;
+            }
+            [self.tableHeaderView refreshDataView];
+        }];
+    }
 }
 
 - (void)dealloc{

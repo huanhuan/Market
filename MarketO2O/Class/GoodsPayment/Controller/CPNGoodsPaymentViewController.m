@@ -14,6 +14,7 @@
 #import "CPNAddressTableViewCell.h"
 #import "UITableView+FDTemplateLayoutCell.h"
 #import "CPNShopingCartManager.h"
+#import "CPNOrderListViewController.h"
 @interface CPNGoodsPaymentViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView                   *tableView;
@@ -176,7 +177,22 @@ static NSString *addressIdentifier = @"addressIdentifier";
         [[CPNHTTPClient instanceClient] requestBuyProductWithProductId:goodsId name:self.userAddressInfoModel.name phone:self.userAddressInfoModel.telephoneNumber address:self.userAddressInfoModel.address completeBlock:^(CPNResponse *response, CPNError *error) {
             if (!error) {
                 [self.selectedProductionArray enumerateObjectsUsingBlock:^(CPNShopingCartItemModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-                    [[CPNShopingCartManager sharedCPNShopingCartManager] deleteShopingCart:obj];;
+                    [[CPNShopingCartManager sharedCPNShopingCartManager] deleteShopingCart:obj];
+//                    [SVProgressHUD showInfoWithStatus:@"下单成功！"];
+                    [self.navigationController popToRootViewControllerAnimated:NO];
+                    CPNAlertView *alertView = [[CPNAlertView alloc] initWithTitle:@"恭喜您成功下单"
+                                                                          message:@"商家将在3个工作日内发货，请留意快递信息，若有疑问，可拨打客服热线"
+                                                                     confirmTitle:@"查看我的订单"];
+                    __weak typeof(alertView) weakAlertView = alertView;
+                    alertView.confirmButtonAction = ^{
+                        CPNOrderListViewController *orderList = [[CPNOrderListViewController alloc] init];
+                        orderList.hidesBottomBarWhenPushed = YES;
+                        AppDelegate *delegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+//                        UINavigationController *navigation = self.navigationController;
+                        [delegate.navigationVC pushViewController:orderList animated:YES];
+                        [weakAlertView dismiss];
+                    };
+                    [alertView show];
                 }];
                 
             }

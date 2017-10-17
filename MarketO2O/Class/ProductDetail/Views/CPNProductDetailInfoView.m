@@ -88,19 +88,19 @@
  */
 - (UIButton *)buyNowButton{
     if (!_buyNowButton) {
-        _buyNowButton = [UIButton buttonWithType:UIButtonTypeSystem];
-        _buyNowButton.backgroundColor = CPNCommonOrangeColor;
-        _buyNowButton.layer.cornerRadius = 3.0;
-        _buyNowButton.width = 80;
-        _buyNowButton.height = 30;
-        _buyNowButton.bottom = self.itemPointsLabel.bottom;
-        _buyNowButton.right = self.width - 15;
-        [_buyNowButton setTitle:@"立即兑换" forState:UIControlStateNormal];
-        [_buyNowButton setTitleColor:CPNCommonWhiteColor forState:UIControlStateNormal];
-        _buyNowButton.titleLabel.font = CPNCommonFontThirteenSize;
-        [_buyNowButton addTarget:self action:@selector(clickBuyNowButtonAction) forControlEvents:UIControlEventTouchUpInside];
-        self.itemPointsLabel.width = _buyNowButton.left - self.itemPointsLabel.left - 10;
-        [self addSubview:_buyNowButton];
+//        _buyNowButton = [UIButton buttonWithType:UIButtonTypeSystem];
+//        _buyNowButton.backgroundColor = CPNCommonOrangeColor;
+//        _buyNowButton.layer.cornerRadius = 3.0;
+//        _buyNowButton.width = 80;
+//        _buyNowButton.height = 30;
+//        _buyNowButton.bottom = self.itemPointsLabel.bottom;
+//        _buyNowButton.right = self.width - 15;
+//        [_buyNowButton setTitle:@"立即兑换" forState:UIControlStateNormal];
+//        [_buyNowButton setTitleColor:CPNCommonWhiteColor forState:UIControlStateNormal];
+//        _buyNowButton.titleLabel.font = CPNCommonFontThirteenSize;
+//        [_buyNowButton addTarget:self action:@selector(clickBuyNowButtonAction) forControlEvents:UIControlEventTouchUpInside];
+//        self.itemPointsLabel.width = _buyNowButton.left - self.itemPointsLabel.left - 10;
+//        [self addSubview:_buyNowButton];
     }
     return _buyNowButton;
 }

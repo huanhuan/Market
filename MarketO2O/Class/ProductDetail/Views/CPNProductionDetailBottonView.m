@@ -29,7 +29,7 @@
         
         self.shoppingNowCartButton = [UIButton new];
         [self.shoppingNowCartButton setBackgroundColor:CPNCommonLightRedColor];
-        [self.shoppingNowCartButton setTitle:@"立即购买" forState:UIControlStateNormal];
+        [self.shoppingNowCartButton setTitle:@"立即兑换" forState:UIControlStateNormal];
         [self.shoppingNowCartButton addTarget:self action:@selector(shoppingNowCartButtonClick:) forControlEvents:UIControlEventTouchUpInside];
         
         self.shopCarButton = [UIButton new];
