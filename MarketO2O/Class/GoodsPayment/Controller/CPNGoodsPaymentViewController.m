@@ -174,7 +174,7 @@ static NSString *addressIdentifier = @"addressIdentifier";
             [dic setObject:[NSString stringWithFormat:@"%ld", obj.count] forKey:obj.id];
         }];
         goodsId = [dic mj_JSONString];
-        [[CPNHTTPClient instanceClient] requestBuyProductWithProductId:goodsId name:self.userAddressInfoModel.name phone:self.userAddressInfoModel.telephoneNumber address:self.userAddressInfoModel.address completeBlock:^(CPNResponse *response, CPNError *error) {
+        [[CPNHTTPClient instanceClient] requestBuyProductWithProductId:goodsId name:self.userAddressInfoModel.name phone:self.userAddressInfoModel.telephoneNumber address:[NSString stringWithFormat:@"%@%@", self.userAddressInfoModel.city, self.userAddressInfoModel.address] completeBlock:^(CPNResponse *response, CPNError *error) {
             if (!error) {
                 [self.selectedProductionArray enumerateObjectsUsingBlock:^(CPNShopingCartItemModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                     [[CPNShopingCartManager sharedCPNShopingCartManager] deleteShopingCart:obj];

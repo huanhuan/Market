@@ -270,7 +270,7 @@
     self.orderAddressLabel.text = [NSString stringWithFormat:@"地址：%@",orderModel.addr];
     
     self.orderDateLabel.text = orderModel.createTime;
-    
+    [self.orderDateLabel sizeToFit];
     NSString *pointsString = [NSString stringWithFormat:@"花费%@积分",orderModel.points];
     NSMutableAttributedString *attributeString = [[NSMutableAttributedString alloc] initWithString:pointsString];
     [attributeString addAttribute:NSForegroundColorAttributeName value:CPNCommonLightGrayColor range:NSMakeRange(0, pointsString.length)];
@@ -279,6 +279,7 @@
     [attributeString addAttribute:NSFontAttributeName value:CPNCommonFontTwelveSize range:NSMakeRange(0, pointsString.length)];
     [attributeString addAttribute:NSFontAttributeName value:CPNCommonFontFourteenSize range:pointRange];
     self.orderPointsLabel.attributedText = attributeString;
+    [self.orderPointsLabel sizeToFit];
 }
 
 

@@ -145,16 +145,16 @@
  */
 - (UIButton *)loginButton{
     if (!_loginButton) {
-        _loginButton = [UIButton buttonWithType:UIButtonTypeSystem];
-        _loginButton.frame = CGRectMake(self.nickNameLabel.left, 0, 100, 30);
-        _loginButton.centerY = self.height/2;
-        _loginButton.layer.borderColor = CPNCommonWhiteColor.CGColor;
-        _loginButton.layer.borderWidth = 1.0;
-        [_loginButton setTitle:@"登录" forState:UIControlStateNormal];
-        [_loginButton setTitleColor:CPNCommonWhiteColor forState:UIControlStateNormal];
-        _loginButton.titleLabel.font = CPNCommonFontFifteenSize;
-        [_loginButton addTarget:self action:@selector(clickLoginButtonAction) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:_loginButton];
+//        _loginButton = [UIButton buttonWithType:UIButtonTypeSystem];
+//        _loginButton.frame = CGRectMake(self.nickNameLabel.left, 0, 100, 30);
+//        _loginButton.centerY = self.height/2;
+//        _loginButton.layer.borderColor = CPNCommonWhiteColor.CGColor;
+//        _loginButton.layer.borderWidth = 1.0;
+//        [_loginButton setTitle:@"登录" forState:UIControlStateNormal];
+//        [_loginButton setTitleColor:CPNCommonWhiteColor forState:UIControlStateNormal];
+//        _loginButton.titleLabel.font = CPNCommonFontFifteenSize;
+//        [_loginButton addTarget:self action:@selector(clickLoginButtonAction) forControlEvents:UIControlEventTouchUpInside];
+//        [self addSubview:_loginButton];
     }
     return _loginButton;
 }
@@ -167,8 +167,8 @@
 - (UIButton *)wxLoginButton{
     if (!_wxLoginButton) {
         _wxLoginButton = [UIButton buttonWithType:UIButtonTypeSystem];
-        _wxLoginButton.frame = self.loginButton.frame;
-        _wxLoginButton.left = self.loginButton.right + 10;
+        _wxLoginButton.frame = CGRectMake(self.nickNameLabel.left, 0, 100, 30);;
+//        _wxLoginButton.left = self.loginButton.right + 10;
         _wxLoginButton.centerY = self.height/2;
         _wxLoginButton.layer.borderColor = CPNCommonWhiteColor.CGColor;
         _wxLoginButton.layer.borderWidth = 1.0;

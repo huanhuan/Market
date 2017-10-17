@@ -11,7 +11,7 @@
 @implementation CPNOrderListItemModel
 
 + (NSDictionary *)mj_replacedKeyFromPropertyName{
-    return @{@"imageUrl":@"img_url"};
+    return @{@"imageUrl":@"img_url",@"points":@"goodsPoints"};
 }
 
 @end

@@ -139,16 +139,16 @@ static NSString *cellIdentifer = @"cellIdentifier";
                     
                 }
                     break;
-                case 1:
-                case 2:
-                case 3:{
-                    CPNAlertView *alertView = [[CPNAlertView alloc] initWithTitle:@"提示"
-                                                                          message:@"此功能即将上线，敬请期待！"
-                                                                     confirmTitle:@"知道了"];
-                    [alertView show];
-                }
+//                case 1:
+//                case 2:
+//                case 3:{
+//                    CPNAlertView *alertView = [[CPNAlertView alloc] initWithTitle:@"提示"
+//                                                                          message:@"此功能即将上线，敬请期待！"
+//                                                                     confirmTitle:@"知道了"];
+//                    [alertView show];
+//                }
                     break;
-                case 4:{
+                case 1:{
                     if (self.appDelegate.loginUserModel) {
                         CPNCouponListManagerViewController *couponList = [[CPNCouponListManagerViewController alloc] init];
                         couponList.hidesBottomBarWhenPushed = YES;
@@ -156,6 +156,13 @@ static NSString *cellIdentifer = @"cellIdentifier";
                     }else{
                         [SVProgressHUD showInfoWithStatus:@"请先登录"];
                     }
+                }
+                    break;
+                case 2:
+                {
+                    CPNContractListVIewController *contractVC = [[CPNContractListVIewController alloc] init];
+                    contractVC.hidesBottomBarWhenPushed = YES;
+                    [self.navigationController pushViewController:contractVC animated:YES];
                 }
                     break;
                 default:
@@ -181,14 +188,6 @@ static NSString *cellIdentifer = @"cellIdentifier";
                     CPNAboutViewController *aboutVC = [[CPNAboutViewController alloc] init];
                     aboutVC.hidesBottomBarWhenPushed = YES;
                     [self.navigationController pushViewController:aboutVC animated:YES];
-                }
-                    break;
-                case 2:
-                {
-#warning 电子合同
-                    CPNContractListVIewController *contractVC = [[CPNContractListVIewController alloc] init];
-                    contractVC.hidesBottomBarWhenPushed = YES;
-                    [self.navigationController pushViewController:contractVC animated:YES];
                 }
                     break;
                 default:

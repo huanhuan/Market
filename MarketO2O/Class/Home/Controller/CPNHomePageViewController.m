@@ -18,8 +18,7 @@
 #import "UIImage+CPNUtil.h"
 #import "CPNMapNavManager.h"
 #import "CPNSignatureNameViewController.h"
-
-#import "CPNShopingCartManager.h"
+#import "CPNOrderListViewController.h"
 
 #import "LWViewController.h"
 
@@ -237,17 +236,8 @@ static NSString *headerIdentifier = @"headerIdentifer";
     if (self.productArray.count > indexPath.row) {
         CPNHomePageProductItemModel *itemModel = self.productArray[indexPath.row];
         CPNProductDetailViewController *productDetail = [[CPNProductDetailViewController alloc] initWithProductModel:itemModel];
-//        LWViewController *productDetail = [[LWViewController alloc] init];
         productDetail.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:productDetail animated:YES];
-
-        [[CPNShopingCartManager sharedCPNShopingCartManager] addToShopingCart:itemModel];
-        //39.918058 longitude:116.397026] name:@"故宫"
-//        CPNSignatureNameViewController *vc = [CPNSignatureNameViewController new];
-//        vc.hidesBottomBarWhenPushed = YES;
-//        [self.navigationController pushViewController:vc animated:YES];
-    
-//        [[CPNMapNavManager sharedCPNMapNavManager] mapNavTargetPointWithLatitude:39.918058 longitude:116.397026 name:@"故宫"];
     }
 }
 
@@ -342,10 +332,13 @@ static NSString *headerIdentifier = @"headerIdentifer";
         }
             break;
         case 1:{
-            CPNAlertView *alertView = [[CPNAlertView alloc] initWithTitle:@"提示"
-                                                                  message:@"此功能即将上线，敬请期待！"
-                                                             confirmTitle:@"知道了"];
-            [alertView show];
+            
+            CPNOrderListViewController *orderVC = [[CPNOrderListViewController alloc] init];
+            [APPDELEGATE.navigationVC pushViewController:orderVC animated:YES];
+//            CPNAlertView *alertView = [[CPNAlertView alloc] initWithTitle:@"提示"
+//                                                                  message:@"此功能即将上线，敬请期待！"
+//                                                             confirmTitle:@"知道了"];
+//            [alertView show];
         }
             break;
         case 2:{

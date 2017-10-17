@@ -30,5 +30,6 @@
 #import "CPNLoginUserInfoModel.h"
 #import "Masonry.h"
 #import "UIImageView+WebCache.h"
+#import "UIImage+CPNUtil.h"
 
 #endif /* MaketO2O_Prefix_pch */

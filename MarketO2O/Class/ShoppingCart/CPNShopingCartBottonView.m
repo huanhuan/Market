@@ -39,7 +39,7 @@
         
         [self.confirmButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.bottom.and.top.and.right.equalTo(self);
-            make.width.mas_equalTo(90);
+            make.width.mas_equalTo(100);
         }];
         
         [self.moneyCountLabel mas_makeConstraints:^(MASConstraintMaker *make) {

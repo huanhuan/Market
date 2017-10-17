@@ -4,15 +4,12 @@
 <array>
 	<array>
 		<string>全部订单</string>
-		<string>待付款</string>
-		<string>待收货</string>
-		<string>售后订单</string>
 		<string>优惠券</string>
+		<string>电子合同</string>
 	</array>
 	<array>
 		<string>拨打客服热线</string>
 		<string>关于我们</string>
-		<string>电子合同</string>
 	</array>
 </array>
 </plist>

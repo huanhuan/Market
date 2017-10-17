@@ -50,6 +50,7 @@ alpha:1.0]
  */
 #define CPN_WECHATAPPSECRET @"e892c091e0d1b26053af9c4550e4401a"
 
+#define APPDELEGATE ((AppDelegate *)[UIApplication sharedApplication].delegate)
 
 #define WeakSelf __weak typeof(self) weakSelf = self;
 
