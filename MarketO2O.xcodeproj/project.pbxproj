@@ -36,6 +36,9 @@
 		2376B2001F79F00800FEE2A8 /* UITableView+FDKeyedHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 2376B1FA1F79F00800FEE2A8 /* UITableView+FDKeyedHeightCache.m */; };
 		2376B2011F79F00800FEE2A8 /* UITableView+FDTemplateLayoutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2376B1FC1F79F00800FEE2A8 /* UITableView+FDTemplateLayoutCell.m */; };
 		2376B2021F79F00800FEE2A8 /* UITableView+FDTemplateLayoutCellDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 2376B1FE1F79F00800FEE2A8 /* UITableView+FDTemplateLayoutCellDebug.m */; };
+		23B106E41F95EB0600236FAC /* CPNContractListVIewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23B106E31F95EB0600236FAC /* CPNContractListVIewController.m */; };
+		23B106EA1F95EB4D00236FAC /* CPNContractModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23B106E91F95EB4D00236FAC /* CPNContractModel.m */; };
+		23B106ED1F95EF6000236FAC /* CPNContractListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 23B106EC1F95EF6000236FAC /* CPNContractListCell.m */; };
 		23E7038A1F8F653C00D2E698 /* CPNContractSignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E703891F8F653C00D2E698 /* CPNContractSignViewController.m */; };
 		23E703901F8F662800D2E698 /* ImgScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E7038D1F8F662800D2E698 /* ImgScrollView.m */; };
 		23E703911F8F662800D2E698 /* ShowImagesFullScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E7038F1F8F662800D2E698 /* ShowImagesFullScreen.m */; };
@@ -276,6 +279,12 @@
 		2376B1FC1F79F00800FEE2A8 /* UITableView+FDTemplateLayoutCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDTemplateLayoutCell.m"; sourceTree = "<group>"; };
 		2376B1FD1F79F00800FEE2A8 /* UITableView+FDTemplateLayoutCellDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDTemplateLayoutCellDebug.h"; sourceTree = "<group>"; };
 		2376B1FE1F79F00800FEE2A8 /* UITableView+FDTemplateLayoutCellDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDTemplateLayoutCellDebug.m"; sourceTree = "<group>"; };
+		23B106E21F95EB0600236FAC /* CPNContractListVIewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPNContractListVIewController.h; sourceTree = "<group>"; };
+		23B106E31F95EB0600236FAC /* CPNContractListVIewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPNContractListVIewController.m; sourceTree = "<group>"; };
+		23B106E81F95EB4D00236FAC /* CPNContractModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPNContractModel.h; sourceTree = "<group>"; };
+		23B106E91F95EB4D00236FAC /* CPNContractModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPNContractModel.m; sourceTree = "<group>"; };
+		23B106EB1F95EF6000236FAC /* CPNContractListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPNContractListCell.h; sourceTree = "<group>"; };
+		23B106EC1F95EF6000236FAC /* CPNContractListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPNContractListCell.m; sourceTree = "<group>"; };
 		23E703881F8F653C00D2E698 /* CPNContractSignViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPNContractSignViewController.h; sourceTree = "<group>"; };
 		23E703891F8F653C00D2E698 /* CPNContractSignViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPNContractSignViewController.m; sourceTree = "<group>"; };
 		23E7038C1F8F662800D2E698 /* ImgScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImgScrollView.h; sourceTree = "<group>"; };
@@ -782,11 +791,41 @@
 			path = FDTableView;
 			sourceTree = "<group>";
 		};
-		23E703871F8F650D00D2E698 /* Contract */ = {
+		23B106E51F95EB1100236FAC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				23B106EB1F95EF6000236FAC /* CPNContractListCell.h */,
+				23B106EC1F95EF6000236FAC /* CPNContractListCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		23B106E61F95EB1E00236FAC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				23B106E81F95EB4D00236FAC /* CPNContractModel.h */,
+				23B106E91F95EB4D00236FAC /* CPNContractModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		23B106E71F95EB2600236FAC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				23E703881F8F653C00D2E698 /* CPNContractSignViewController.h */,
 				23E703891F8F653C00D2E698 /* CPNContractSignViewController.m */,
+				23B106E21F95EB0600236FAC /* CPNContractListVIewController.h */,
+				23B106E31F95EB0600236FAC /* CPNContractListVIewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		23E703871F8F650D00D2E698 /* Contract */ = {
+			isa = PBXGroup;
+			children = (
+				23B106E71F95EB2600236FAC /* Controllers */,
+				23B106E61F95EB1E00236FAC /* Models */,
+				23B106E51F95EB1100236FAC /* Views */,
 				23E7038B1F8F662800D2E698 /* showImagesFullScreen */,
 			);
 			path = Contract;
@@ -2002,6 +2041,7 @@
 				BF6F89E01F124AB5006D4187 /* UIScrollView+MJRefresh.m in Sources */,
 				BF6F89F21F124AB5006D4187 /* SlideSwitchView.m in Sources */,
 				BF6F8A131F1282FB006D4187 /* CPNTextField.m in Sources */,
+				23B106ED1F95EF6000236FAC /* CPNContractListCell.m in Sources */,
 				2376B1C11F78914800FEE2A8 /* CPNGoodsPayMentBottonView.m in Sources */,
 				23733E0C1F6B6F9900B8B183 /* ViewController+MASAdditions.m in Sources */,
 				BF6F89B21F124AB5006D4187 /* CPNUserCenterItemTableViewCell.m in Sources */,
@@ -2025,6 +2065,7 @@
 				23733E091F6B6F9900B8B183 /* NSArray+MASAdditions.m in Sources */,
 				F36EB8401F6E1BC600DD251A /* CPNShopInfoModel.m in Sources */,
 				2376B1FF1F79F00800FEE2A8 /* UITableView+FDIndexPathHeightCache.m in Sources */,
+				23B106EA1F95EB4D00236FAC /* CPNContractModel.m in Sources */,
 				2376B1E91F79ECF800FEE2A8 /* CPNAddressTableViewCell.m in Sources */,
 				BF6F89EC1F124AB5006D4187 /* UIImage+GIF.m in Sources */,
 				BF6F89CE1F124AB5006D4187 /* MJProperty.m in Sources */,
@@ -2061,6 +2102,7 @@
 				BF6F8A0D1F127EB0006D4187 /* CPNAlertView.m in Sources */,
 				BF6F89E91F124AB5006D4187 /* SDWebImageManager.m in Sources */,
 				BF6F89961F124AB5006D4187 /* CPNGetCouponitemModel.m in Sources */,
+				23B106E41F95EB0600236FAC /* CPNContractListVIewController.m in Sources */,
 				F3E8C1041F8EF9F3006D7C61 /* CPNExpressCheckViewController.m in Sources */,
 				BF6F89A71F124AB5006D4187 /* CPNPointsMarketCategoryModel.m in Sources */,
 				BF6F89CF1F124AB5006D4187 /* MJPropertyKey.m in Sources */,

@@ -23,6 +23,7 @@
 #import "CPNGetCouponitemModel.h"
 #import "CPNConfigSettingModel.h"
 #import "CPNShopInfoModel.h"
+#import "CPNContractModel.h"
 
 
 @implementation CPNHTTPClient
@@ -489,25 +490,22 @@ static CPNHTTPClient * __clientInstance = NULL;
 /**
  获取商铺的电子合同
  
- @param shopId 商铺的id
  @param completeBlock 请求完成回调
  */
-- (void)requestContractWithShopId:(NSString *)shopId
-                    completeBlock:(void (^)(NSString *ContractImageUrl, CPNError *error))completeBlock
+- (void)requestContractWithCompleteBlock:(void (^)(NSArray *Contracts, CPNError *error))completeBlock
 {
     CPNRequest *request = [[CPNRequest alloc] init];
-    [request setString:@"16" forKey:PARAM_KEY_SHOP_ID];
     
-    [request setRequestPath:PATH_CONTRACT_IMAGE];
+    [request setRequestPath:PATH_GET_ALL_CONTRACT];
     [request setRequestMethod:CPN_REQUEST_METHOD_GET];
     
     CPNHTTPCompleteBlock finishBlock = ^(CPNResponse *response, CPNError *error) {
         if (error) {
             completeBlock(nil,error);
         }else{
-            if (response.respBody && [response.respBody isKindOfClass:[NSString class]]) {
-                NSString *imageUrl = [NSString stringWithFormat:@"http://www.lifva.com/%@",response.respBody];
-                completeBlock(imageUrl,nil);
+            if (response.respBody && [response.respBody isKindOfClass:[NSArray class]]) {
+                NSArray *contractArray = [CPNContractModel mj_objectArrayWithKeyValuesArray:response.respBody];
+                completeBlock(contractArray,nil);
             }else{
                 CPNError *error = [[CPNError alloc] init];
                 error.errorCode = CPNErrorTypeDataParaseError;
@@ -551,30 +549,28 @@ static CPNHTTPClient * __clientInstance = NULL;
                      completeBlock:(void (^)(BOOL status, CPNError *error))completeBlock
 {
     CPNRequest *request = [[CPNRequest alloc] init];
-    [request setString:@"16" forKey:PARAM_KEY_SHOP_ID];
+    [request setString:shopId forKey:PARAM_KEY_SHOP_ID];
     
-    [request setRequestPath:PATH_CONTRACT_IMAGE];
-    [request setRequestMethod:CPN_REQUEST_METHOD_GET];
+    [request setRequestPath:PATH_UPDATE_CONTRACT];
+    
+    [request setRequestMethod:CPN_REQUEST_METHOD_POST];
+    request.pictureData = UIImagePNGRepresentation(image);
+    request.requestImageKey = [NSString stringWithFormat:@"%ld",image.hash];
+    //    [request setima]
     
     CPNHTTPCompleteBlock finishBlock = ^(CPNResponse *response, CPNError *error) {
         if (error) {
             completeBlock(nil,error);
         }else{
-            if (response.respBody && [response.respBody isKindOfClass:[NSString class]]) {
-                NSString *imageUrl = [NSString stringWithFormat:@"http://www.lifva.com/%@",response.respBody];
-                completeBlock(imageUrl,nil);
-            }else{
-                CPNError *error = [[CPNError alloc] init];
-                error.errorCode = CPNErrorTypeDataParaseError;
-                error.errorMessage = CPNErrorMessageDataParaseError;
-                completeBlock(nil,error);
-            }
+            completeBlock(YES, nil);
         }
     };
-    
-    [[CPNHTTPAgent instanceAgent] startRequest:request
-                                      response:finishBlock
+    [[CPNHTTPAgent instanceAgent] startUploadPicture:request
+                                            response:finishBlock
      ];
+//    [[CPNHTTPAgent instanceAgent] startRequest:request
+//                                      response:finishBlock
+//     ];
 }
 
 #pragma mark - 兑换商品请求接口

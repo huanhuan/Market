@@ -10,6 +10,6 @@
 
 @interface CPNContractSignViewController : CPNBaseViewController
 
-- (id)initWithContractImageUrl:(NSString *)imageUrl;
+- (id)initWithContractImageUrl:(NSString *)imageUrl shopId:(NSUInteger)shopId;
 
 @end

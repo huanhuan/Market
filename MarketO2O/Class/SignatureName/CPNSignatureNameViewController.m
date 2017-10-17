@@ -9,7 +9,7 @@
 #import "CPNSignatureNameViewController.h"
 #import "PPSSignatureView.h"
 #import <GLKit/GLKViewController.h>
-
+#import "UIImage+CPNUtil.h"
 #define BUTTONHEIGHT 70
 
 @interface CPNSignatureNameViewController ()
@@ -70,16 +70,25 @@
 
 - (UIButton *)button{
     if (!_button) {
-        _button = [UIButton buttonWithType:UIButtonTypeSystem];
-        _button.backgroundColor = CPNCommonRedColor;
-//        _button.layer.cornerRadius = 3.0;
-        _button.width = self.view.width;
-        _button.height = BUTTONHEIGHT;
+        
+
+        _button = [[UIButton alloc] initWithFrame:CGRectZero];
+        [_button setBackgroundColor:CPNCommonLightRedColor];
+        [_button setBackgroundImage:[UIImage createImageWithColor:CPNCommonLightRedColor] forState:UIControlStateNormal];
+        [_button setBackgroundImage:[UIImage createImageWithColor:CPNCommonLightGrayColor] forState:UIControlStateDisabled];
+        [_button.titleLabel setFont:CPNCommonFontFifteenSize];
         [_button setTitle:@"确定" forState:UIControlStateNormal];
         [_button setTitleColor:CPNCommonWhiteColor forState:UIControlStateNormal];
-        _button.titleLabel.font = [UIFont systemFontOfSize:20];
         [_button addTarget:self action:@selector(confirmButtonClick) forControlEvents:UIControlEventTouchUpInside];
+        _button.layer.cornerRadius = 10;
         [self.view addSubview:_button];
+        [_button mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self.view.mas_left).offset(10);
+            make.right.equalTo(self.view.mas_right).offset(-10);
+            make.height.equalTo(@40);
+            make.bottom.equalTo(self.view.mas_bottom).offset(-10);
+        }];
+
     }
     return _button;
 }

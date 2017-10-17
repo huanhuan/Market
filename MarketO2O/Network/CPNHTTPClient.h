@@ -147,11 +147,9 @@
 /**
  获取商铺的电子合同
  
- @param shopId 商铺的id
  @param completeBlock 请求完成回调
  */
-- (void)requestContractWithShopId:(NSString *)shopId
-                    completeBlock:(void (^)(NSString *ContractImageUrl, CPNError *error))completeBlock;
+- (void)requestContractWithCompleteBlock:(void (^)(NSArray *Contracts, CPNError *error))completeBlock;
 
 #pragma mark 上传签名后的电子图片
 /**

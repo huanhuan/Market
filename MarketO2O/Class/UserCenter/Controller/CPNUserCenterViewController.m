@@ -13,6 +13,7 @@
 #import "CPNCouponListManagerViewController.h"
 #import "CPNAlertView.h"
 #import "CPNAboutViewController.h"
+#import "CPNContractListVIewController.h"
 
 static NSString *cellIdentifer = @"cellIdentifier";
 
@@ -176,6 +177,9 @@ static NSString *cellIdentifer = @"cellIdentifier";
                 case 2:
                 {
 #warning 电子合同
+                    CPNContractListVIewController *contractVC = [[CPNContractListVIewController alloc] init];
+                    contractVC.hidesBottomBarWhenPushed = YES;
+                    [self.navigationController pushViewController:contractVC animated:YES];
                 }
                     break;
                 default:
