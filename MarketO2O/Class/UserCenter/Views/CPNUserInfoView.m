@@ -207,11 +207,11 @@
         }else{
             self.loginButton.hidden = NO;
         }
-        if ([WXApi isWXAppInstalled]) {
+//        if ([WXApi isWXAppInstalled]) {
             self.wxLoginButton.hidden = NO;
-        }else{
-            self.wxLoginButton.hidden = YES;
-        }
+//        }else{
+//            self.wxLoginButton.hidden = YES;
+//        }
         self.iconImageView.image = [UIImage imageNamed:@"默认头像"];
     }
 }

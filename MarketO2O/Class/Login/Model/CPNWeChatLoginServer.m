@@ -33,7 +33,14 @@ CPNSingletonM(LoginServer)
     SendAuthReq* req =[[SendAuthReq alloc ] init];
     req.scope = @"snsapi_userinfo" ;
     req.state = @"wechat_sdk_coupon";
-    [WXApi sendReq:req];
+    
+    if (![WXApi isWXAppInstalled]) {
+        [WXApi sendAuthReq:req viewController:APPDELEGATE.navigationVC delegate:self];
+    }else
+    {
+        [WXApi sendReq:req];
+    }
+    
 }
 
 
