@@ -11,6 +11,8 @@
 #import "UIImageView+WebCache.h"
 #import "CPNExchangeProductAlertView.h"
 #import "CPNOrderListViewController.h"
+#import "CPNShopingCartItemModel.h"
+#import "CPNGoodsPaymentManager.h"
 
 @interface CPNPointsMarketGoodsItemTableViewCell ()
 
@@ -226,35 +228,44 @@
         [SVProgressHUD showInfoWithStatus:@"积分不够"];
         return;
     }
-    CPNExchangeProductAlertView *alertView = [[CPNExchangeProductAlertView alloc] initWithTitle:nil
-                                                                                        message:nil
-                                                                                   confirmTitle:@"立即兑换"];
-    __weak typeof(alertView) weakAlertView = alertView;
-    alertView.confirmButtonAction = ^{
-        if (!weakAlertView.nameText) {
-            return ;
-        }
-        
-        if (!weakAlertView.phoneText) {
-            return;
-        }
-        
-        if (!weakAlertView.addressText) {
-            return;
-        }
-        [self requestBuyNowProductWithName:weakAlertView.nameText
-                                 phoneText:weakAlertView.phoneText
-                               addressText:weakAlertView.addressText];
-        [weakAlertView dismiss];
-        self.alertView = nil;
-    };
+    CPNShopingCartItemModel *model = [CPNShopingCartItemModel new];
+    model.count = 1;
+    model.id = self.itemModel.id;
+    model.name = self.itemModel.name;
+    model.desc = self.itemModel.desc;
+    model.imageUrl = self.itemModel.imageUrl;
+    model.points = self.itemModel.points;
     
-    alertView.closeButtonAction = ^{
-        [weakAlertView dismiss];
-        self.alertView = nil;
-    };
-    [alertView show];
-    self.alertView = alertView;
+    [[CPNGoodsPaymentManager sharedCPNGoodsPaymentManager] gotoGoodsPaymentVC:@[model]];
+//    CPNExchangeProductAlertView *alertView = [[CPNExchangeProductAlertView alloc] initWithTitle:nil
+//                                                                                        message:nil
+//                                                                                   confirmTitle:@"立即兑换"];
+//    __weak typeof(alertView) weakAlertView = alertView;
+//    alertView.confirmButtonAction = ^{
+//        if (!weakAlertView.nameText) {
+//            return ;
+//        }
+//
+//        if (!weakAlertView.phoneText) {
+//            return;
+//        }
+//
+//        if (!weakAlertView.addressText) {
+//            return;
+//        }
+//        [self requestBuyNowProductWithName:weakAlertView.nameText
+//                                 phoneText:weakAlertView.phoneText
+//                               addressText:weakAlertView.addressText];
+//        [weakAlertView dismiss];
+//        self.alertView = nil;
+//    };
+//
+//    alertView.closeButtonAction = ^{
+//        [weakAlertView dismiss];
+//        self.alertView = nil;
+//    };
+//    [alertView show];
+//    self.alertView = alertView;
 }
 
 
