@@ -17,6 +17,8 @@ const static NSString *APIKey = @"96c97d590c170946201d94d7b74991c7";
 
 @interface AppDelegate ()
 
+@property (nonatomic, assign)NSInteger intergerNumber;
+@property (nonatomic, assign)NSUInteger uintergerNumber;
 @end
 
 @implementation AppDelegate
@@ -44,6 +46,14 @@ const static NSString *APIKey = @"96c97d590c170946201d94d7b74991c7";
     [self applicationInitWeChatSDK];
     [self configureAPIKey];
     
+    self.intergerNumber = -2;
+    self.uintergerNumber = 1;
+    if (self.uintergerNumber > self.intergerNumber) {
+        NSLog(@"");
+    }
+    if (self.uintergerNumber - self.intergerNumber > 0) {
+        NSLog(@"sdf");
+    }
     return YES;
 }
 
