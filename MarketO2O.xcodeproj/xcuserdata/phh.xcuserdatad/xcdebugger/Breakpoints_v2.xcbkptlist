@@ -554,12 +554,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarketO2O/Class/ProductDetail/Controller/CPNProductDetailViewController.m"
-            timestampString = "529773183.096458"
+            timestampString = "530497095.423515"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "107"
             endingLineNumber = "107"
-            landmarkName = "-productImageView"
+            landmarkName = "-buyNow"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -570,12 +570,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarketO2O/Class/ProductDetail/Controller/CPNProductDetailViewController.m"
-            timestampString = "529773183.09653"
+            timestampString = "530497095.423594"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "106"
             endingLineNumber = "106"
-            landmarkName = "-productImageView"
+            landmarkName = "-buyNow"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -713,12 +713,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarketO2O/Class/Home/Controller/CPNHomePageViewController.m"
-            timestampString = "529942047.369622"
+            timestampString = "530497376.112732"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
-            landmarkName = "-viewWillAppear:"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "-viewWillLayoutSubviews"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -729,13 +729,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarketO2O/Class/Home/Controller/CPNHomePageViewController.m"
-            timestampString = "529942047.369695"
+            timestampString = "530497376.114704"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
-            landmarkName = "CPNHomePageViewController"
-            landmarkType = "3">
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "-viewWillAppear:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -745,11 +745,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarketO2O/Class/Home/Controller/CPNHomePageViewController.m"
-            timestampString = "529942047.369752"
+            timestampString = "530497376.115845"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "344"
-            endingLineNumber = "344"
+            startingLineNumber = "362"
+            endingLineNumber = "362"
             landmarkName = "-clickModuleButtonActionWithIndex:"
             landmarkType = "7">
          </BreakpointContent>
@@ -809,13 +809,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarketO2O/Class/Home/Controller/CPNHomePageViewController.m"
-            timestampString = "529942047.36987"
+            timestampString = "530497376.116487"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "209"
-            endingLineNumber = "209"
-            landmarkName = "CPNHomePageViewController"
-            landmarkType = "3">
+            startingLineNumber = "227"
+            endingLineNumber = "227"
+            landmarkName = "-numberOfSectionsInTableView:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -825,11 +825,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarketO2O/Class/Home/Controller/CPNHomePageViewController.m"
-            timestampString = "529942047.369932"
+            timestampString = "530497376.117365"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "226"
-            endingLineNumber = "226"
+            startingLineNumber = "244"
+            endingLineNumber = "244"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>

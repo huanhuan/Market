@@ -19,6 +19,7 @@
 #import "CPNMapNavManager.h"
 #import "CPNSignatureNameViewController.h"
 #import "CPNOrderListViewController.h"
+#import "SDCycleScrollView.h"
 
 #import "LWViewController.h"
 
@@ -35,7 +36,7 @@ static NSString *headerIdentifier = @"headerIdentifer";
 /**
  首页banner轮播图
  */
-@property (nonatomic, strong) UIImageView                   *topImageView;
+@property (nonatomic, strong) SDCycleScrollView                   *topImageView;
 /**
  首页顶部操作模块view
  */
@@ -69,18 +70,25 @@ static NSString *headerIdentifier = @"headerIdentifer";
     [self requestGoodsListIsHeaderRefresh:NO isFooterRefrsh:NO];
     self.navigationItem.leftBarButtonItem = nil;
     
+    UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, MAIN_SCREEN_WIDTH - 20, 40)];//allocate titleView
+    UIColor *color =  self.navigationController.navigationBar.tintColor;
+    [titleView setBackgroundColor:color];
+    
+    //Set to titleView
+    self.navigationItem.titleView = titleView;
     //显示搜索框
-    UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(10,30, 320,40)];
+    UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(10,0, MAIN_SCREEN_WIDTH - 20 - 20, 35)];
     searchBar.placeholder =@"搜索商品"; //和textfield一样有placeholder属性
     searchBar.delegate = (id<UISearchBarDelegate>)self;
     [searchBar setBackgroundImage:[UIImage createImageWithColor:CPNCommonRedColor] forBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault]; // 替换系统的背景图片
-    [_headerView addSubview:searchBar];
-    [searchBar mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_topImageView).offset(10);
-        make.right.equalTo(_topImageView).offset(-10);
-        make.top.equalTo(_topImageView).offset(30);
-        make.height.equalTo(@40);
-    }];
+//    [_headerView addSubview:searchBar];
+    [titleView addSubview:searchBar];
+//    [searchBar mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.equalTo(_topImageView).offset(10);
+//        make.right.equalTo(_topImageView).offset(-10);
+//        make.top.equalTo(_topImageView).offset(30);
+//        make.height.equalTo(@40);
+//    }];
 }
 
 - (void)viewWillLayoutSubviews{
@@ -120,7 +128,7 @@ static NSString *headerIdentifier = @"headerIdentifer";
  */
 - (UIView *)headerView{
     if (!_headerView) {
-        _headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 230)];
+        _headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.width/2.0 + 100)];
         _headerView.backgroundColor = [UIColor clearColor];
     }
     return _headerView;
@@ -132,15 +140,25 @@ static NSString *headerIdentifier = @"headerIdentifer";
 
  @return view
  */
-- (UIImageView *)topImageView{
+- (SDCycleScrollView *)topImageView{
+    
     if (!_topImageView) {
-        _topImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.headerView.width, 130)];
-        _topImageView.backgroundColor = CPNCommonRedColor;
-        //TODO:图片
-        _topImageView.image = [UIImage imageNamed:@""];
+        //        productImageViews = [[SDCycleScrollView alloc] initWithFrame:CGRectMake(0, 0, self.scrollView.width, self.scrollView.width)];
+        _topImageView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0 , self.headerView.width, self.headerView.width/2.0) delegate:nil placeholderImage:[UIImage createImageWithColor:CPNCommonRedColor size:CGSizeMake(self.headerView.width, self.headerView.width/2.0)]];
+//        [_topImageView setImageURLStringsGroup:@[[NSURL URLWithString:self.productModel.imageUrl]]];
+        //        _productImageView.backgroundColor = CPNCommonOrangeColor;
+        //        [_productImageView sd_setImageWithURL:[NSURL URLWithString:self.productModel.imageUrl] placeholderImage:[UIImage imageNamed:@"图片默认图"]];
         [self.headerView addSubview:_topImageView];
     }
     return _topImageView;
+//    if (!_topImageView) {
+//        _topImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.headerView.width, 130)];
+//        _topImageView.backgroundColor = CPNCommonRedColor;
+//        //TODO:图片
+//        _topImageView.image = [UIImage imageNamed:@""];
+//        [self.headerView addSubview:_topImageView];
+//    }
+//    return _topImageView;
 }
 
 #pragma mark UISearchBarDelegate
